@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "5e45396f2f3e6176515fd2cd910474d9d249a960",
+  "url": "https://github.com/gogolumo/github-ci-fixer/actions/runs/37822290707",
+  "jobs": [
+    {
+      "name": "checks (macos-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "checks (ubuntu-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "checks (windows-latest, 3.11)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "checks (windows-latest, 3.14)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "checks (macos-latest, 3.14)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "checks (ubuntu-latest, 3.14)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}
