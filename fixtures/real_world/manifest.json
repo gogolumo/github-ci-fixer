@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "dataset": "real-github-actions-failures-2026-10-08",
+  "source_kind": "sanitized-authentic-log-excerpts",
+  "collection_method": "Read-only gh run view --json and gh run view --log-failed; no reruns or changes",
+  "collection_date": "2026-10-08",
+  "sanitization": [
+    "Select stated physical line ranges from the complete failed-job log",
+    "Remove ANSI/control sequences and redact known credential patterns using shared security.redact",
+    "Preserve original GitHub job/step/timestamp prefixes; UNKNOWN STEP is actual gh output, not invented metadata"
+  ],
+  "limitations": [
+    "Five convenience-sampled public runs, six job/step cases; this dataset is not an accuracy estimate",
+    "Excerpts omit unrelated setup/success output; full collected failed-job logs were also checked locally",
+    "Expected categories identify observed failures, not independently proven root causes",
+    "Unsupported or non-diagnostic logs must remain insufficient; no repair commands executed"
+  ],
+  "cases": [
+    {
+      "id": "playsparse-rustfmt",
+      "repository": "gogolumo/PlaySparse",
+      "repository_visibility": "public",
+      "run_id": 37612144554,
+      "workflow": "rust-runtime",
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554",
+      "commit": "cbba380a45c9119ac35af692c80d97bd1a2b6b71",
+      "run_conclusion": "failure",
+      "job": "linux",
+      "job_id": 112761679805,
+      "job_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554/job/112761679805",
+      "step": "Run cargo fmt --all -- --check",
+      "step_number": 6,
+      "step_conclusion": "failure",
+      "fixture": "playsparse-rustfmt.log",
+      "source_line_ranges": [
+        [
+          1135,
+          1136
+        ],
+        [
+          1144,
+          1156
+        ]
+      ],
+      "raw_log_file": "playsparse-37612144554.log",
+      "raw_log_sha256": "8a47575b17c457ff0be10a1a83dd3daf35939b603d28f2f94e830dd1dd4c47eb",
+      "fixture_sha256": "3fe601732a2f255a1b1b32dc3879076cfa829d612bf636ab830f9b30a9a43d83",
+      "expected_observed_category": "rust-formatting-mismatch",
+      "expected_free_codes": [
+        "rust.format"
+      ],
+      "expected_pro_codes": [
+        "rust.format"
+      ],
+      "evidence_assessment": "rustfmt showed formatting-only source changes under cargo fmt --all -- --check; compiler correctness was not tested.",
+      "verification": "not-run"
+    },
+    {
+      "id": "playsparse-windows-filesystem",
+      "repository": "gogolumo/PlaySparse",
+      "repository_visibility": "public",
+      "run_id": 37612038222,
+      "workflow": "desktop",
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612038222",
+      "commit": "f314c8eedddb530f6fbf77ba88c83c9fb7a6cc56",
+      "run_conclusion": "failure",
+      "job": "native (windows-latest, windows-x64, nsis)",
+      "job_id": 112761319637,
+      "job_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612038222/job/112761319637",
+      "step": "Hosted Windows generated mount and descendant acceptance (GUI and physical proof excluded)",
+      "step_number": 21,
+      "step_conclusion": "failure",
+      "fixture": "playsparse-windows-filesystem.log",
+      "source_line_ranges": [
+        [
+          1335,
+          1346
+        ],
+        [
+          1352,
+          1352
+        ]
+      ],
+      "raw_log_file": "playsparse-37612038222.log",
+      "raw_log_sha256": "0c1f424ce5df775bcd12622586cb19f3b35bbbaafad7ed1de0f8e7ec230be341",
+      "fixture_sha256": "389d50a690ec9257fcbc3e8441f5c761f62819b1c0a14e9d8063f9019eeb729d",
+      "expected_observed_category": "windows-filesystem-operation-rejected",
+      "expected_free_codes": [
+        "windows.filesystem"
+      ],
+      "expected_pro_codes": [
+        "windows.filesystem"
+      ],
+      "evidence_assessment": "Error 1005 occurred when launching a fixture after mount, read and overlay write succeeded. The underlying driver/volume/application cause remains unproven.",
+      "verification": "not-run"
+    },
+    {
+      "id": "flask-mypy",
+      "repository": "pallets/flask",
+      "repository_visibility": "public",
+      "run_id": 37633292268,
+      "workflow": "Tests",
+      "run_url": "https://github.com/pallets/flask/actions/runs/37633292268",
+      "commit": "329c32b916938d33fec41f40eb7ed854bf0b3e2b",
+      "run_conclusion": "failure",
+      "job": "typing",
+      "job_id": 112832844965,
+      "job_url": "https://github.com/pallets/flask/actions/runs/37633292268/job/112832844965",
+      "step": "Run uv run --locked --no-default-groups --group dev tox run -e typing",
+      "step_number": 6,
+      "step_conclusion": "failure",
+      "fixture": "flask-mypy.log",
+      "source_line_ranges": [
+        [
+          265,
+          275
+        ]
+      ],
+      "raw_log_file": "pallets-flask-37633292268.log",
+      "raw_log_sha256": "c1f78c60954ca0ba7983dfa76bdeab7fcc52ee5a7e23fc3002bafa3b9bda8453",
+      "fixture_sha256": "2e54429febdde811e6cb9fc38ffa7af0cbc9181fcda34b6ebe239c28cf826a17",
+      "expected_observed_category": "python-static-type-mismatch",
+      "expected_free_codes": [],
+      "expected_pro_codes": [
+        "python.typecheck"
+      ],
+      "evidence_assessment": "mypy rejected Mapping[str, Any] overriding an App base attribute typed dict[str, Any]. Root design intent and the right source/dependency repair were not independently established.",
+      "verification": "not-run"
+    },
+    {
+      "id": "requests-ruff-format",
+      "repository": "psf/requests",
+      "repository_visibility": "public",
+      "run_id": 36454554828,
+      "workflow": "Lint code",
+      "run_url": "https://github.com/psf/requests/actions/runs/36454554828",
+      "commit": "56b943471a2df56657b0a7cce6245c009c256c81",
+      "run_conclusion": "failure",
+      "job": "lint",
+      "job_id": 109037451922,
+      "job_url": "https://github.com/psf/requests/actions/runs/36454554828/job/109037451922",
+      "step": "Run pre-commit",
+      "step_number": 4,
+      "step_conclusion": "failure",
+      "fixture": "requests-ruff-format.log",
+      "source_line_ranges": [
+        [
+          233,
+          241
+        ],
+        [
+          268,
+          268
+        ]
+      ],
+      "raw_log_file": "psf-requests-36454554828.log",
+      "raw_log_sha256": "d0cfa72c9f1a3a612804b4b9f7a0b63ab4688e7261b81b00742d0b48f361c7c5",
+      "fixture_sha256": "b76d5299cc593e770f6ba9d1c173dafe48ba9e40f1ce9e44bbc16a9ee0966bdf",
+      "expected_observed_category": "ruff-format-hook-modified-files",
+      "expected_free_codes": [
+        "python.format"
+      ],
+      "expected_pro_codes": [
+        "python.format"
+      ],
+      "evidence_assessment": "The ruff-format hook failed because it modified two files; the preceding ruff check passed. No target files were changed by this evaluation.",
+      "verification": "not-run"
+    },
+    {
+      "id": "express-cookie-assertion",
+      "repository": "expressjs/express",
+      "repository_visibility": "public",
+      "run_id": 37533322411,
+      "workflow": "ci",
+      "run_url": "https://github.com/expressjs/express/actions/runs/37533322411",
+      "commit": "fd2e874ecf92eeb20cdd49b7726d1a0579b52bd2",
+      "run_conclusion": "failure",
+      "job": "Run tests (windows-latest, 24)",
+      "job_id": 112507903805,
+      "job_url": "https://github.com/expressjs/express/actions/runs/37533322411/job/112507903805",
+      "step": "Run tests",
+      "step_number": 10,
+      "step_conclusion": "failure",
+      "fixture": "express-cookie-assertion.log",
+      "source_line_ranges": [
+        [
+          150,
+          156
+        ],
+        [
+          1297,
+          1309
+        ],
+        [
+          1341,
+          1341
+        ]
+      ],
+      "raw_log_file": "expressjs-express-37533322411.log",
+      "raw_log_sha256": "3b97fddfa2c9b9d815cce1ad1fd44f5a2aa606d9dc3e9ed40b8946997066183e",
+      "fixture_sha256": "0dae45712b5109ec0e6df842244f20bd847e26e4b17ebf80dce3d5252c1fcb71",
+      "expected_observed_category": "javascript-cookie-assertion-mismatch",
+      "expected_free_codes": [
+        "node.test"
+      ],
+      "expected_pro_codes": [
+        "node.test"
+      ],
+      "evidence_assessment": "The clearCookie assertion expected an Expires timestamp one second earlier than received. This is an observed assertion mismatch; timing flakiness and application defects remain hypotheses.",
+      "verification": "not-run"
+    },
+    {
+      "id": "playsparse-macos-unknown",
+      "repository": "gogolumo/PlaySparse",
+      "repository_visibility": "public",
+      "run_id": 37612144554,
+      "workflow": "rust-runtime",
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554",
+      "commit": "cbba380a45c9119ac35af692c80d97bd1a2b6b71",
+      "run_conclusion": "failure",
+      "job": "macos-sdk",
+      "job_id": 112761679824,
+      "job_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554/job/112761679824",
+      "step": "Verified macFUSE SDK compile, link and tests without driver installation",
+      "step_number": 6,
+      "step_conclusion": "failure",
+      "fixture": "playsparse-macos-unknown.log",
+      "source_line_ranges": [
+        [
+          1599,
+          1600
+        ],
+        [
+          1608,
+          1617
+        ]
+      ],
+      "raw_log_file": "playsparse-37612144554.log",
+      "raw_log_sha256": "8a47575b17c457ff0be10a1a83dd3daf35939b603d28f2f94e830dd1dd4c47eb",
+      "fixture_sha256": "6bbe8fb3f040f5efcbf59b1bad053a06fa915994e39a2549de28535779ab6fda",
+      "expected_observed_category": "unknown",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "evidence_assessment": "The wrapper logged status FAIL, mount_validation NOT RUN and exit 1, without the underlying compiler/test diagnostics. No missing SDK or driver cause can be established.",
+      "verification": "not-run"
+    }
+  ]
+}

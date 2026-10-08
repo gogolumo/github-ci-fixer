@@ -1,0 +1,7 @@
+linux	Run cargo fmt	##[group]Run cargo fmt --all -- --check
+linux	Run cargo fmt	cargo fmt --all -- --check
+linux	Run cargo fmt	Diff in /isolated/work/src/lib.rs:1493:
+linux	Run cargo fmt	-    return Err(error).context("fixture");
+linux	Run cargo fmt	+    return Err(error)
+linux	Run cargo fmt	+        .context("fixture");
+linux	Run cargo fmt	##[error]Process completed with exit code 1.

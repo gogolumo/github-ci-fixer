@@ -1,0 +1,16 @@
+[
+  {"fixture": "rust_format.log", "first_code": "rust.format"},
+  {"fixture": "windows_volume.log", "first_code": "windows.filesystem"},
+  {"fixture": "ruff_format.log", "first_code": "python.format"},
+  {"fixture": "supertest_assertion.log", "first_code": "node.test"},
+  {"fixture": "format_diff_unrelated.log", "first_code": null},
+  {"fixture": "format_without_check.log", "first_code": null},
+  {"fixture": "ruff_wrong_hook.log", "first_code": null},
+  {"fixture": "ruff_missing_modification.log", "first_code": null},
+  {"fixture": "volume_other_code.log", "first_code": null},
+  {"fixture": "volume_warning.log", "first_code": null},
+  {"fixture": "launch_generic_fail.log", "first_code": null},
+  {"fixture": "assertion_no_js_context.log", "first_code": null},
+  {"fixture": "assertion_no_js_location.log", "first_code": null},
+  {"fixture": "format_success.log", "first_code": null}
+]

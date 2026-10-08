@@ -1,0 +1,6 @@
+lint	Run pre-commit	ruff check...............................................................Passed
+lint	Run pre-commit	ruff format..............................................................Failed
+lint	Run pre-commit	- hook id: ruff-format
+lint	Run pre-commit	- files were modified by this hook
+lint	Run pre-commit	2 files reformatted, 45 files left unchanged
+lint	Run pre-commit	##[error]Process completed with exit code 1.

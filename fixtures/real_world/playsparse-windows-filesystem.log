@@ -1,0 +1,13 @@
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:14.2953244Z PASS filesystem provider readiness
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:14.3021895Z PASS fixture registration
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.5694580Z PASS analysis
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.6228961Z PASS optimization
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.6768124Z PASS verification
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8138304Z PASS mount
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8159994Z PASS exact file read
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8182237Z PASS overlay write
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8265932Z FAIL launch test fixture
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8283080Z "FAIL" — receipt: \\?\D:\a\_temp\playsparse-hosted-native\validation-windows.json
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8284272Z Error: The volume does not contain a recognized file system.
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8284787Z Please make sure that all required file system drivers are loaded and that the volume is not corrupted. (os error 1005)
+native (windows-latest, windows-x64, nsis)	UNKNOWN STEP	2026-10-07T11:13:16.8615883Z subprocess.CalledProcessError: Command '['D:\\a\\PlaySparse\\PlaySparse\\validation-kit\\playsparse-validation.exe', '--service-only', '--engine', 'D:\\a\\PlaySparse\\PlaySparse\\validation-kit\\playsparse-engine.exe', '--fixture', 'D:\\a\\PlaySparse\\PlaySparse\\validation-kit\\playsparse-fixture.exe', '--work', 'D:\\a\\_temp\\playsparse-hosted-native', '--commit', '77b27b5cc520d98d309609285865b2bd6357a2e3', '--evidence', 'hosted native test']' returned non-zero exit status 1.

@@ -1,0 +1,12 @@
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:37.1419320Z ##[group]Run python3 tools/macos-sdk-check.py --work "$RUNNER_TEMP/playsparse-macos-sdk"
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:37.1419990Z ^[[36;1mpython3 tools/macos-sdk-check.py --work "$RUNNER_TEMP/playsparse-macos-sdk"^[[0m
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:39.2615780Z attach: 0
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:39.5159810Z signature: 0
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:39.8819590Z extract: 0
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.0427500Z detach: 0
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4144550Z {
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4182350Z   "status": "FAIL",
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4182860Z   "evidence": "/Users/runner/work/_temp/playsparse-macos-sdk",
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4183540Z   "mount_validation": "NOT RUN"
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4183980Z }
+macos-sdk	UNKNOWN STEP	2026-10-07T11:10:51.4328630Z ##[error]Process completed with exit code 1.

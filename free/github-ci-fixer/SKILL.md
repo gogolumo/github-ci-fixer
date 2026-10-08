@@ -34,3 +34,5 @@ missing evidence, [security](references/security.md) for limits, and the
 [worked example](examples/python-missing.md) for a complete input/report workflow.
 
 Example: `python3 scripts/ci_fixer.py examples/python-missing.log`
+
+Release: 1.0.1. Saved-log analysis never executes repository code.

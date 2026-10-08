@@ -12,9 +12,40 @@ class Rule:
     cause: str
     recommendation: str
     verify: str
+    command_pattern: str | None = None
+    following_patterns: tuple[str, ...] = ()
 
 
 RULES = (
+    Rule(
+        "rust.format",
+        r"^Diff in .+:\d+(?::\d+)?:\s*$",
+        "Rust formatting check found a mismatch",
+        "rustfmt emitted a source diff while cargo fmt ran in --check mode. The checked file's formatting differs from the selected rustfmt configuration; this is independent of compilation and code correctness.",
+        "Review the listed formatting diff with CI's Rust toolchain and rustfmt configuration. In an approved checkout, run cargo fmt --all, review its diff, and commit only the intended formatting changes.",
+        "Run cargo fmt --all -- --check with CI's toolchain. Run the affected build and tests separately; a passing formatting check establishes formatting only.",
+        r"^cargo(?:\s+\+\S+)?\s+fmt\b.*(?:\s|^)--check(?:\s|$)",
+    ),
+    Rule(
+        "windows.filesystem",
+        r"(?:The volume does not contain a recognized file system\.|\[WinError 1005\]|\bos error 1005\b)",
+        "Windows rejected a volume or filesystem operation",
+        "Windows error 1005 or an unrecognized-filesystem message was observed. Volume format, mount state, filesystem-driver support and the particular operation are hypotheses; the log alone does not establish an application defect or a missing driver.",
+        "Identify the failing operation (mount, read, write or executable launch) and inspect preceding success markers. Compare the runner's volume format, mount state, filesystem-driver availability and executable-launch support. Collect relevant Windows diagnostics and reproduce in a matching isolated environment before considering reviewed system changes; do not infer a specific WinFsp cause from error 1005 alone.",
+        "Repeat the exact failing operation on the same Windows environment after reviewing its prerequisites. Check mount/read/write/launch independently; successful earlier operations do not establish that executable launch is supported.",
+    ),
+    Rule(
+        "python.format",
+        r"^ruff format\.{3,}Failed\s*$",
+        "Ruff formatting hook found a mismatch",
+        "The ruff-format hook failed and reports that it modified files. CI's checked source does not match Ruff's selected formatter output; this does not establish a code-correctness defect.",
+        "Review the hook's changed-file summary and the repository's Ruff configuration/version. In an approved checkout, run the same ruff-format pre-commit hook, review its formatting changes and commit only the intended files.",
+        "Run pre-commit run ruff-format --all-files with CI's configuration/version and confirm it passes without modifying files. Run relevant type checks and tests separately.",
+        following_patterns=(
+            r"^- hook id: ruff-format\s*$",
+            r"^- files were modified by this hook\s*$",
+        ),
+    ),
     Rule(
         "python.missing-module",
         r"(?:ModuleNotFoundError: No module named|ImportError: cannot import name)",
@@ -25,7 +56,7 @@ RULES = (
     ),
     Rule(
         "python.test",
-        r"(?:^FAILED\s+\S+|AssertionError\b|E\s+assert\b)",
+        r"(?:^FAILED\s+\S+|AssertionError\b(?! \[ERR_ASSERTION\])|E\s+assert\b)",
         "Python assertion or test failed",
         "An assertion differs from expected behavior; the assertion alone does not establish which code is wrong.",
         "Inspect the failing assertion, input and expected/actual values. Reproduce the named test before changing production code or expectations.",
@@ -65,11 +96,21 @@ RULES = (
     ),
     Rule(
         "node.test",
-        r"(?:^FAIL\s+\S+|Expected:.*Received:|AssertionError \[ERR_ASSERTION\])",
+        r"(?:^FAIL\s+\S+\.(?:[cm]?[jt]sx?)(?:\s|$)|Expected:.*Received:|AssertionError \[ERR_ASSERTION\])",
         "JavaScript test failed",
         "The test runner reported an assertion or suite failure; preceding context is required.",
         "Reproduce the named test and compare its assertion output; inspect mocks, fixtures and runtime version before editing expectations.",
         "Run the selected test and affected npm test suite.",
+    ),
+    Rule(
+        "node.test",
+        r"^\s*Error: expected .+, got .+",
+        "JavaScript assertion reported different actual output",
+        "A JavaScript test command reports an expected/actual mismatch at a JavaScript test location. The observed assertion does not establish whether implementation, expected value or timing is responsible.",
+        "Inspect the named JavaScript test, inputs and expected/actual values using CI's runtime. For time-derived assertions, check clock control and boundary timing before changing behavior or expectations.",
+        "Run the named JavaScript test with the same runtime and test configuration, then the affected suite. Review timing-dependent cases across the runner platforms when applicable.",
+        r"^(?:npm|pnpm|yarn)\s+(?:run\s+)?test(?:[-:\s]|$)|^npx\s+mocha(?:\s|$)",
+        (r"\bat .+\.(?:[cm]?[jt]sx?):\d+(?::\d+)?\)",),
     ),
     Rule(
         "rust.compile",
@@ -130,6 +171,9 @@ RULES = (
 )
 
 COMPILED = tuple((rule, re.compile(rule.pattern)) for rule in RULES)
+# Runner command headings establish context, not instructions to execute.
+# Plain cargo commands also occur in saved logs without GitHub group headings.
+COMMAND = re.compile(r"^(?:##\[group\])?Run\s+(.+)$|^((?:\$\s+)?(?:cargo|npm|pnpm|yarn|npx)\b.*)$")
 WARNING = re.compile(r"(?i)(?:^|\s)(?:warning[: ]|##\[warning\]|deprecated\b)")
 EXIT = re.compile(
     r"(?:Process completed with exit code [1-9]|##\[error\].*exit code|Error: Process completed)"

@@ -1,0 +1,3 @@
+Run cargo fmt --all -- --check
+Formatting check passed
+ruff format..............................................................Passed

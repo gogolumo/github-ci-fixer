@@ -1,0 +1,3 @@
+Run custom-integration-tool
+Error: expected "header" of "a", got "b"
+    at Context.<anonymous> (tests/example.js:64:8)

@@ -1,0 +1,621 @@
+{
+  "schema_version": "1.0",
+  "dataset": "real-github-actions-failures-2026-10-08",
+  "source_kind": "sanitized-authentic-log-excerpts",
+  "unique_failed_runs": 5,
+  "job_step_cases": 6,
+  "editions_tested": [
+    "free",
+    "pro"
+  ],
+  "regression_checks": 22,
+  "regression_failures": [],
+  "results": [
+    {
+      "id": "playsparse-rustfmt",
+      "repository": "gogolumo/PlaySparse",
+      "run_id": 37612144554,
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554",
+      "job": "linux",
+      "step": "Run cargo fmt --all -- --check",
+      "commit": "cbba380a45c9119ac35af692c80d97bd1a2b6b71",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "rust-formatting-mismatch",
+      "evidence_assessment": "rustfmt showed formatting-only source changes under cargo fmt --all -- --check; compiler correctness was not tested.",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "rust.format"
+          ],
+          "findings": [
+            {
+              "code": "rust.format",
+              "line": 3,
+              "job": "linux",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 3,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "rust.format"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "rust.format"
+          ],
+          "findings": [
+            {
+              "code": "rust.format",
+              "line": 3,
+              "job": "linux",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 3,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "rust.format"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "id": "playsparse-windows-filesystem",
+      "repository": "gogolumo/PlaySparse",
+      "run_id": 37612038222,
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612038222",
+      "job": "native (windows-latest, windows-x64, nsis)",
+      "step": "Hosted Windows generated mount and descendant acceptance (GUI and physical proof excluded)",
+      "commit": "f314c8eedddb530f6fbf77ba88c83c9fb7a6cc56",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "windows-filesystem-operation-rejected",
+      "evidence_assessment": "Error 1005 occurred when launching a fixture after mount, read and overlay write succeeded. The underlying driver/volume/application cause remains unproven.",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "windows.filesystem"
+          ],
+          "findings": [
+            {
+              "code": "windows.filesystem",
+              "line": 11,
+              "job": "native (windows-latest, windows-x64, nsis)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "windows.filesystem"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "windows.filesystem"
+          ],
+          "findings": [
+            {
+              "code": "windows.filesystem",
+              "line": 11,
+              "job": "native (windows-latest, windows-x64, nsis)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "windows.filesystem"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "id": "flask-mypy",
+      "repository": "pallets/flask",
+      "run_id": 37633292268,
+      "run_url": "https://github.com/pallets/flask/actions/runs/37633292268",
+      "job": "typing",
+      "step": "Run uv run --locked --no-default-groups --group dev tox run -e typing",
+      "commit": "329c32b916938d33fec41f40eb7ed854bf0b3e2b",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "python-static-type-mismatch",
+      "evidence_assessment": "mypy rejected Mapping[str, Any] overriding an App base attribute typed dict[str, Any]. Root design intent and the right source/dependency repair were not independently established.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": 3,
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes": [],
+          "regression_matched": true,
+          "supported_observation": false,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.typecheck"
+          ],
+          "findings": [
+            {
+              "code": "python.typecheck",
+              "line": 2,
+              "job": "typing",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 2,
+          "verification": "not-run",
+          "missing_information": [
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes": [
+            "python.typecheck"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "id": "requests-ruff-format",
+      "repository": "psf/requests",
+      "run_id": 36454554828,
+      "run_url": "https://github.com/psf/requests/actions/runs/36454554828",
+      "job": "lint",
+      "step": "Run pre-commit",
+      "commit": "56b943471a2df56657b0a7cce6245c009c256c81",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "ruff-format-hook-modified-files",
+      "evidence_assessment": "The ruff-format hook failed because it modified two files; the preceding ruff check passed. No target files were changed by this evaluation.",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.format"
+          ],
+          "findings": [
+            {
+              "code": "python.format",
+              "line": 2,
+              "job": "lint",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "python.format"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.format"
+          ],
+          "findings": [
+            {
+              "code": "python.format",
+              "line": 2,
+              "job": "lint",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "python.format"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "id": "express-cookie-assertion",
+      "repository": "expressjs/express",
+      "run_id": 37533322411,
+      "run_url": "https://github.com/expressjs/express/actions/runs/37533322411",
+      "job": "Run tests (windows-latest, 24)",
+      "step": "Run tests",
+      "commit": "fd2e874ecf92eeb20cdd49b7726d1a0579b52bd2",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "javascript-cookie-assertion-mismatch",
+      "evidence_assessment": "The clearCookie assertion expected an Expires timestamp one second earlier than received. This is an observed assertion mismatch; timing flakiness and application defects remain hypotheses.",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "node.test"
+          ],
+          "findings": [
+            {
+              "code": "node.test",
+              "line": 15,
+              "job": "Run tests (windows-latest, 24)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "node.test"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "node.test"
+          ],
+          "findings": [
+            {
+              "code": "node.test",
+              "line": 15,
+              "job": "Run tests (windows-latest, 24)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes": [
+            "node.test"
+          ],
+          "regression_matched": true,
+          "supported_observation": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "id": "playsparse-macos-unknown",
+      "repository": "gogolumo/PlaySparse",
+      "run_id": 37612144554,
+      "run_url": "https://github.com/gogolumo/PlaySparse/actions/runs/37612144554",
+      "job": "macos-sdk",
+      "step": "Verified macFUSE SDK compile, link and tests without driver installation",
+      "commit": "cbba380a45c9119ac35af692c80d97bd1a2b6b71",
+      "source_kind": "sanitized-authentic-log-excerpts",
+      "expected_observed_category": "unknown",
+      "evidence_assessment": "The wrapper logged status FAIL, mount_validation NOT RUN and exit 1, without the underlying compiler/test diagnostics. No missing SDK or driver cause can be established.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes": [],
+          "regression_matched": true,
+          "supported_observation": false,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": 0,
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes": [],
+          "regression_matched": true,
+          "supported_observation": false,
+          "false_positive_codes": []
+        }
+      }
+    }
+  ],
+  "complete_log_results": [
+    {
+      "file": "expressjs-express-37533322411.log",
+      "sha256": "3b97fddfa2c9b9d815cce1ad1fd44f5a2aa606d9dc3e9ed40b8946997066183e",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "node.test"
+          ],
+          "findings": [
+            {
+              "code": "node.test",
+              "line": 1304,
+              "job": "Run tests (windows-latest, 24)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 20,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "node.test"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "node.test"
+          ],
+          "findings": [
+            {
+              "code": "node.test",
+              "line": 1304,
+              "job": "Run tests (windows-latest, 24)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 20,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "node.test"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "file": "pallets-flask-37633292268.log",
+      "sha256": "c1f78c60954ca0ba7983dfa76bdeab7fcc52ee5a7e23fc3002bafa3b9bda8453",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": 3,
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_unique_codes": [],
+          "regression_matched": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.typecheck"
+          ],
+          "findings": [
+            {
+              "code": "python.typecheck",
+              "line": 266,
+              "job": "typing",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 2,
+          "verification": "not-run",
+          "missing_information": [
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_unique_codes": [
+            "python.typecheck"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "file": "playsparse-37612038222.log",
+      "sha256": "0c1f424ce5df775bcd12622586cb19f3b35bbbaafad7ed1de0f8e7ec230be341",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "windows.filesystem"
+          ],
+          "findings": [
+            {
+              "code": "windows.filesystem",
+              "line": 1345,
+              "job": "native (windows-latest, windows-x64, nsis)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 15,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "windows.filesystem"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "windows.filesystem"
+          ],
+          "findings": [
+            {
+              "code": "windows.filesystem",
+              "line": 1345,
+              "job": "native (windows-latest, windows-x64, nsis)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 15,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "windows.filesystem"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "file": "playsparse-37612144554.log",
+      "sha256": "8a47575b17c457ff0be10a1a83dd3daf35939b603d28f2f94e830dd1dd4c47eb",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "rust.format",
+            "rust.format"
+          ],
+          "findings": [
+            {
+              "code": "rust.format",
+              "line": 608,
+              "job": "windows",
+              "step": "UNKNOWN STEP"
+            },
+            {
+              "code": "rust.format",
+              "line": 1144,
+              "job": "linux",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 14,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "rust.format"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "rust.format",
+            "rust.format"
+          ],
+          "findings": [
+            {
+              "code": "rust.format",
+              "line": 608,
+              "job": "windows",
+              "step": "UNKNOWN STEP"
+            },
+            {
+              "code": "rust.format",
+              "line": 1144,
+              "job": "linux",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 14,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "rust.format"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        }
+      }
+    },
+    {
+      "file": "psf-requests-36454554828.log",
+      "sha256": "d0cfa72c9f1a3a612804b4b9f7a0b63ab4688e7261b81b00742d0b48f361c7c5",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.format"
+          ],
+          "findings": [
+            {
+              "code": "python.format",
+              "line": 234,
+              "job": "lint",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 1,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "python.format"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.format"
+          ],
+          "findings": [
+            {
+              "code": "python.format",
+              "line": 234,
+              "job": "lint",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": 1,
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_unique_codes": [
+            "python.format"
+          ],
+          "regression_matched": true,
+          "false_positive_codes": []
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Five convenience-sampled public runs, six job/step cases; this dataset is not an accuracy estimate",
+    "Excerpts omit unrelated setup/success output; full collected failed-job logs were also checked locally",
+    "Expected categories identify observed failures, not independently proven root causes",
+    "Unsupported or non-diagnostic logs must remain insufficient; no repair commands executed",
+    "Regression matches include intentionally unsupported outcomes; they are not diagnosis accuracy",
+    "No target checkout, repair, test execution, workflow rerun or success-rate measurement"
+  ]
+}
