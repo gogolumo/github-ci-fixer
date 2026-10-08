@@ -25,6 +25,7 @@ On Windows, use `python` if `python3` is unavailable.
 ```text
 git clone https://github.com/gogolumo/github-ci-fixer.git
 cd github-ci-fixer
+git switch feat/github-ci-fixer-free
 python3 free/github-ci-fixer/scripts/ci_fixer.py fixtures/python_missing.log
 ```
 
