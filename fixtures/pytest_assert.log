@@ -1,0 +1,2 @@
+E assert 3 == 4
+FAILED tests/test_total.py::test_total - AssertionError

@@ -1,0 +1,2 @@
+warning: deprecated API
+ModuleNotFoundError: No module named 'pytest'

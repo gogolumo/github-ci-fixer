@@ -1,0 +1,2 @@
+error[E0308]: mismatched types
+ --> src/main.rs:3:5
