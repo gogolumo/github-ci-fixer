@@ -1,0 +1,234 @@
+{
+  "dataset": "controlled-synthetic-v1",
+  "cases": 37,
+  "passed": 37,
+  "results": [
+    {
+      "fixture": "python_missing.log",
+      "first_code": "python.missing-module",
+      "actual": "python.missing-module",
+      "passed": true
+    },
+    {
+      "fixture": "python_import.log",
+      "first_code": "python.missing-module",
+      "actual": "python.missing-module",
+      "passed": true
+    },
+    {
+      "fixture": "pytest_assert.log",
+      "first_code": "python.test",
+      "actual": "python.test",
+      "passed": true
+    },
+    {
+      "fixture": "pytest_failed.log",
+      "first_code": "python.test",
+      "actual": "python.test",
+      "passed": true
+    },
+    {
+      "fixture": "node_module.log",
+      "first_code": "node.resolve",
+      "actual": "node.resolve",
+      "passed": true
+    },
+    {
+      "fixture": "node_local.log",
+      "first_code": "node.resolve",
+      "actual": "node.resolve",
+      "passed": true
+    },
+    {
+      "fixture": "npm_peer.log",
+      "first_code": "node.peer",
+      "actual": "node.peer",
+      "passed": true
+    },
+    {
+      "fixture": "npm_lock.log",
+      "first_code": "node.lock",
+      "actual": "node.lock",
+      "passed": true
+    },
+    {
+      "fixture": "typescript.log",
+      "first_code": "node.typescript",
+      "actual": "node.typescript",
+      "passed": true
+    },
+    {
+      "fixture": "jest.log",
+      "first_code": "node.test",
+      "actual": "node.test",
+      "passed": true
+    },
+    {
+      "fixture": "rust_type.log",
+      "first_code": "rust.compile",
+      "actual": "rust.compile",
+      "passed": true
+    },
+    {
+      "fixture": "rust_symbol.log",
+      "first_code": "rust.compile",
+      "actual": "rust.compile",
+      "passed": true
+    },
+    {
+      "fixture": "pip_version.log",
+      "first_code": "dependency.install",
+      "actual": "dependency.install",
+      "passed": true
+    },
+    {
+      "fixture": "pip_distribution.log",
+      "first_code": "dependency.install",
+      "actual": "dependency.install",
+      "passed": true
+    },
+    {
+      "fixture": "npm_registry.log",
+      "first_code": "dependency.install",
+      "actual": "dependency.install",
+      "passed": true
+    },
+    {
+      "fixture": "cargo_resolve.log",
+      "first_code": "dependency.install",
+      "actual": "dependency.install",
+      "passed": true
+    },
+    {
+      "fixture": "env_missing.log",
+      "first_code": "environment.missing",
+      "actual": "environment.missing",
+      "passed": true
+    },
+    {
+      "fixture": "env_key.log",
+      "first_code": "environment.missing",
+      "actual": "environment.missing",
+      "passed": true
+    },
+    {
+      "fixture": "file_python.log",
+      "first_code": "filesystem.missing",
+      "actual": "filesystem.missing",
+      "passed": true
+    },
+    {
+      "fixture": "file_windows.log",
+      "first_code": "filesystem.missing",
+      "actual": "filesystem.missing",
+      "passed": true
+    },
+    {
+      "fixture": "permission_linux.log",
+      "first_code": "permission.denied",
+      "actual": "permission.denied",
+      "passed": true
+    },
+    {
+      "fixture": "permission_windows.log",
+      "first_code": "permission.denied",
+      "actual": "permission.denied",
+      "passed": true
+    },
+    {
+      "fixture": "permission_github.log",
+      "first_code": "permission.denied",
+      "actual": "permission.denied",
+      "passed": true
+    },
+    {
+      "fixture": "workflow_yaml.log",
+      "first_code": "workflow.invalid",
+      "actual": "workflow.invalid",
+      "passed": true
+    },
+    {
+      "fixture": "workflow_expression.log",
+      "first_code": "workflow.invalid",
+      "actual": "workflow.invalid",
+      "passed": true
+    },
+    {
+      "fixture": "runner_ubuntu.log",
+      "first_code": "runner.command",
+      "actual": "runner.command",
+      "passed": true
+    },
+    {
+      "fixture": "runner_windows.log",
+      "first_code": "runner.command",
+      "actual": "runner.command",
+      "passed": true
+    },
+    {
+      "fixture": "warning_only.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "exit_only.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "truncated.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "empty.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "ambiguous.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "json_input.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "success.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "injection.log",
+      "first_code": null,
+      "actual": null,
+      "passed": true
+    },
+    {
+      "fixture": "warning_before_error.log",
+      "first_code": "python.missing-module",
+      "actual": "python.missing-module",
+      "passed": true
+    },
+    {
+      "fixture": "cascade.log",
+      "first_code": "python.missing-module",
+      "actual": "python.missing-module",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Hand-curated signature examples; not an estimate of real-world diagnosis accuracy",
+    "Unknown errors intentionally return insufficient evidence",
+    "No repair success rate measured"
+  ]
+}
