@@ -70,6 +70,7 @@ def build(root: Path, output: Path) -> str:
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path, name in files:
             info = zipfile.ZipInfo(name, (2020, 1, 1, 0, 0, 0))
+            info.create_system = 3  # Normalize ZIP platform metadata on Windows too.
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = (stat.S_IFREG | 0o644) << 16
             archive.writestr(info, path.read_bytes())
