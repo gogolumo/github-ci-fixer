@@ -69,6 +69,8 @@ offline, markdown.
 
 ## Changelog
 
+1.0.1 (2026-10-08): evidence-backed formatting/filesystem signatures, historical-run validation and portable package hardening.
+
 1.0.0 (2026-10-08): initial release candidate with tested diagnostic fixtures and reproducible packages.
 Offline Markdown diagnostic workflow.
 

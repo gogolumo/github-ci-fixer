@@ -1,0 +1,35 @@
+# Final release report — GitHub CI Fixer Free 1.0.1
+
+Decision: **NOT READY** — local acceptance checks passed; the new PR's six-platform matrix is not yet complete. No merge, commercial archive upload or Agensi publication has occurred.
+
+## Delivered changes
+
+Shared diagnosis now distinguishes Rust formatting, Windows filesystem error1005, Ruff formatter-hook changes and contextual JavaScript assertion failures. Required command/job/step evidence and negative fixtures prevent generic diff/FAIL lines from inventing diagnoses. Printable ANSI logs and Unicode UTF-8 output are handled. Free's merged-main installation command was tested against a fresh public clone. Package checks reject nonportable names/collisions and run extracted code from an unrelated directory.
+
+## Validation evidence
+
+- Local unittest: **30 passed**, no skipped tests on this macOS host.
+- Ruff lint/format and mypy passed; compile, skill metadata, deterministic package build, archive extraction, unrelated-CWD/UTF-8/CRLF smoke passed.
+- [Real-world report](REAL_WORLD_VALIDATION.md): five actual public failed runs, six retained cases, 22 cross-edition excerpt/full-log expectation checks matched. Free supports four observations, Pro five. Free mypy and both macOS SDK cases remain insufficient. No observed extra categories in this sample; no real-world repair was attempted. This dataset informed rules and is not held-out accuracy evidence.
+- Live read-only gh collection against Flask and Express preserved exact failed commits and workflow content. Error conditions are mocked tests, explicitly separate from live checks.
+- Baseline merged-main CI was six/six in each repository; **1.0.1 PR CI: pending creation**. Baseline success is not new-release acceptance evidence.
+
+## Security findings and limits
+
+The ignored-input approval gap is addressed through conservative rejection and execution-copy exclusions. Required tests cover tracked/untracked/ignored executable changes, external symlink, mutated submodule, bad hash, forged command, absent isolation acknowledgement, zero/all-skipped tests, timeout and secret output. Additional tests check original/copy mutation, tool/environment changes, large output and children after timeout/normal parent exit.
+
+Ordinary host execution is not sandboxed. Approval does not prove code is safe. Installed dependencies, interpreter libraries, tool descendants, home configuration, network and absolute references remain external. Source/tool changes reverted between observations are not proven absent. Deliberately escaping POSIX groups or privileged processes require VM/container isolation. Source capture is limited to1000 files/8MB; symlink/submodule/ignored-dependency/build-heavy projects need manual isolated verification. Code requiring Git metadata may fail in the copy. Unknown secrets/private fragments may survive best-effort redaction. No complete environment-integrity claim.
+
+## Local distribution
+
+- Archive: `release/github-ci-fixer-free-1.0.1.zip`
+- Exact size: **16491 bytes**
+- SHA-256: `880f9d3d3a80b290ea1c4ef33dd6be6be57780ffc2d83dbc6c56fffd86e9a72c`
+- 14 regular files; SKILL.md at root, all referenced guides/modules/licenses present.
+- Structure/extraction smoke passed. A second build produced identical bytes in the packaging regression test. Marketplace approval: not requested.
+
+## Review and manual publication
+
+Review [initial audit](RELEASE_HARDENING_AUDIT.md), [marketplace format check](MARKETPLACE_FORMAT_1.0.1.md), [changelog](../CHANGELOG.md) and [manual publication checklist](../marketing/LAUNCH_CHECKLIST.md). Listings: [Free](../marketing/FREE_LISTING.md). Agensi product links remain pending. The official seller guide and skill specification were checked; the public terms page timed out, and creator-dashboard limits/current terms require owner review. The50MB decimal ceiling is a local conservative policy, not a verified Agensi limit.
+
+The owner must review and approve PR merges, then manually submit separate Free $0/Pro $24.99 products. Marketplace automated/manual review and buyer installation remain external publication gates. Universal agent-host discovery is untested; prior Codex offline analysis succeeded, Claude runtime QA remains blocked by expired local authentication. No response-time SLA, adoption metric or repair-success guarantee is advertised.

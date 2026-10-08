@@ -18,6 +18,7 @@ from pathlib import Path, PurePosixPath
 MAX_SIZE = 50_000_000
 FORBIDDEN = {".git", ".env", ".venv", "__pycache__", "__MACOSX", ".DS_Store", "node_modules"}
 SUFFIXES = {".py", ".md", ".txt", ".json", ".log", ".yaml", ".yml"}
+DEVICE = re.compile(r"(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\..*)?\Z", re.I)
 SECRET = re.compile(
     r"\b(?:gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16})\b|-----BEGIN [^-]*PRIVATE KEY-----"
 )
@@ -50,6 +51,26 @@ def metadata(text: str) -> dict:
     return fields
 
 
+def portable_name(name: str) -> None:
+    parts = PurePosixPath(name).parts
+    if (
+        not parts
+        or name != PurePosixPath(name).as_posix()
+        or name.startswith("/")
+        or "\\" in name
+        or any(
+            p.startswith(".")
+            or p.endswith((".", " "))
+            or DEVICE.fullmatch(p)
+            or any(ord(c) < 32 or c in '<>:"|?*' for c in p)
+            for p in parts
+        )
+        or any(p in FORBIDDEN for p in parts)
+        or PurePosixPath(name).suffix not in SUFFIXES
+    ):
+        raise ValueError("Unsafe or nonportable package filename")
+
+
 def build(root: Path, output: Path) -> str:
     if root.is_symlink():
         raise ValueError("Package root cannot be a symlink")
@@ -60,10 +81,17 @@ def build(root: Path, output: Path) -> str:
             continue
         if path.is_symlink():
             raise ValueError("Package symlinks are forbidden")
+        if not path.is_dir() and not stat.S_ISREG(path.stat().st_mode):
+            raise ValueError("Package contains a special file")
         if path.is_file():
             if path.suffix not in SUFFIXES or path.stat().st_size > MAX_SIZE:
                 raise ValueError("Unsupported or oversized package file")
+            portable_name(relative.as_posix())
             files.append((path, relative.as_posix()))
+    if len(files) > 1000 or sum(p.stat().st_size for p, _ in files) >= MAX_SIZE:
+        raise ValueError("Expanded package exceeds limits")
+    if len({n.casefold() for _, n in files}) != len(files):
+        raise ValueError("Case-insensitive package filename collision")
     if metadata((root / "SKILL.md").read_text(encoding="utf-8"))["name"] != root.name:
         raise ValueError("Skill name must match directory name")
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -73,7 +101,11 @@ def build(root: Path, output: Path) -> str:
             info.create_system = 3  # Normalize ZIP platform metadata on Windows too.
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = (stat.S_IFREG | 0o644) << 16
-            archive.writestr(info, path.read_bytes())
+            with path.open("rb") as source:
+                data = source.read(MAX_SIZE + 1)
+            if len(data) >= MAX_SIZE:
+                raise ValueError("Package file grew beyond limits")
+            archive.writestr(info, data)
     digest = hashlib.sha256(output.read_bytes()).hexdigest()
     output.with_suffix(output.suffix + ".sha256").write_text(
         f"{digest}  {output.name}\n", encoding="utf-8"
@@ -97,25 +129,30 @@ def validate(path: Path, smoke_digest: str | None = None) -> dict:
         if len(members) > 1000 or sum(i.file_size for i in members) >= MAX_SIZE:
             raise ValueError("Expanded package exceeds limits")
         names = set()
+        folded = set()
         texts = {}
         root = Path(temp).resolve()
         for info in members:
             name = info.filename
             parts = PurePosixPath(name).parts
+            portable_name(name)
+            mode = stat.S_IFMT(info.external_attr >> 16)
             if (
                 not name
                 or info.is_dir()
                 or name in names
+                or name.casefold() in folded
                 or name.startswith("/")
                 or "\\" in name
                 or ":" in name
                 or any(p in {"..", "."} | FORBIDDEN for p in parts)
                 or name != PurePosixPath(name).as_posix()
-                or stat.S_ISLNK(info.external_attr >> 16)
+                or mode not in {0, stat.S_IFREG}
                 or PurePosixPath(name).suffix not in SUFFIXES
             ):
                 raise ValueError("Unsafe, duplicate or unsupported archive member")
             names.add(name)
+            folded.add(name.casefold())
             data = archive.read(info)
             text = data.decode("utf-8")
             if SECRET.search(text):
@@ -152,6 +189,7 @@ def validate(path: Path, smoke_digest: str | None = None) -> dict:
                 text=True,
                 timeout=20,
                 shell=False,
+                cwd=Path(temp).parent,
             )
             if (
                 result.returncode
@@ -184,9 +222,13 @@ def main() -> int:
     check.add_argument(
         "--smoke-approved-sha256", help="Approve local execution of this exact trusted package"
     )
+    meta = sub.add_parser("metadata")
+    meta.add_argument("skill", type=Path)
     args = parser.parse_args()
     try:
-        if args.command == "build":
+        if args.command == "metadata":
+            report = metadata(args.skill.read_text(encoding="utf-8"))
+        elif args.command == "build":
             digest = build(args.root, args.output)
             report = validate(args.output, digest)
         else:

@@ -1,3 +1,5 @@
+> Historical 1.0.0 report. Current release: [1.0.1 final report](FINAL_RELEASE_REPORT_1.0.1.md).
+
 # Release report — 2026-10-08
 
 Status: validated release candidate, prepared for manual submission review. Marketplace approval

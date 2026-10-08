@@ -25,7 +25,6 @@ On Windows, use `python` if `python3` is unavailable.
 ```text
 git clone https://github.com/gogolumo/github-ci-fixer.git
 cd github-ci-fixer
-git switch feat/github-ci-fixer-free
 python3 free/github-ci-fixer/scripts/ci_fixer.py fixtures/python_missing.log
 ```
 
@@ -80,7 +79,7 @@ python3 -m venv .venv
 python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 python3 tools/benchmark.py
-python3 tools/build_release.py build free/github-ci-fixer release/github-ci-fixer-free.zip
+python3 tools/build_release.py build free/github-ci-fixer release/github-ci-fixer-free-1.0.1.zip
 ```
 
 Activate the virtual environment before the pip/check commands: `source .venv/bin/activate`
