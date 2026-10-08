@@ -81,7 +81,11 @@ def build(root: Path, output: Path) -> str:
 
 
 def validate(path: Path, smoke_digest: str | None = None) -> dict:
-    if path.is_symlink() or not stat.S_ISREG(path.stat().st_mode) or path.stat().st_size >= MAX_SIZE:
+    if (
+        path.is_symlink()
+        or not stat.S_ISREG(path.stat().st_mode)
+        or path.stat().st_size >= MAX_SIZE
+    ):
         raise ValueError("Archive must be a regular file smaller than 50 MB")
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     with (
