@@ -1,0 +1,150 @@
+[
+  {
+    "fixture": "python_missing.log",
+    "first_code": "python.missing-module"
+  },
+  {
+    "fixture": "python_import.log",
+    "first_code": "python.missing-module"
+  },
+  {
+    "fixture": "pytest_assert.log",
+    "first_code": "python.test"
+  },
+  {
+    "fixture": "pytest_failed.log",
+    "first_code": "python.test"
+  },
+  {
+    "fixture": "node_module.log",
+    "first_code": "node.resolve"
+  },
+  {
+    "fixture": "node_local.log",
+    "first_code": "node.resolve"
+  },
+  {
+    "fixture": "npm_peer.log",
+    "first_code": "node.peer"
+  },
+  {
+    "fixture": "npm_lock.log",
+    "first_code": "node.lock"
+  },
+  {
+    "fixture": "typescript.log",
+    "first_code": "node.typescript"
+  },
+  {
+    "fixture": "jest.log",
+    "first_code": "node.test"
+  },
+  {
+    "fixture": "rust_type.log",
+    "first_code": "rust.compile"
+  },
+  {
+    "fixture": "rust_symbol.log",
+    "first_code": "rust.compile"
+  },
+  {
+    "fixture": "pip_version.log",
+    "first_code": "dependency.install"
+  },
+  {
+    "fixture": "pip_distribution.log",
+    "first_code": "dependency.install"
+  },
+  {
+    "fixture": "npm_registry.log",
+    "first_code": "dependency.install"
+  },
+  {
+    "fixture": "cargo_resolve.log",
+    "first_code": "dependency.install"
+  },
+  {
+    "fixture": "env_missing.log",
+    "first_code": "environment.missing"
+  },
+  {
+    "fixture": "env_key.log",
+    "first_code": "environment.missing"
+  },
+  {
+    "fixture": "file_python.log",
+    "first_code": "filesystem.missing"
+  },
+  {
+    "fixture": "file_windows.log",
+    "first_code": "filesystem.missing"
+  },
+  {
+    "fixture": "permission_linux.log",
+    "first_code": "permission.denied"
+  },
+  {
+    "fixture": "permission_windows.log",
+    "first_code": "permission.denied"
+  },
+  {
+    "fixture": "permission_github.log",
+    "first_code": "permission.denied"
+  },
+  {
+    "fixture": "workflow_yaml.log",
+    "first_code": "workflow.invalid"
+  },
+  {
+    "fixture": "workflow_expression.log",
+    "first_code": "workflow.invalid"
+  },
+  {
+    "fixture": "runner_ubuntu.log",
+    "first_code": "runner.command"
+  },
+  {
+    "fixture": "runner_windows.log",
+    "first_code": "runner.command"
+  },
+  {
+    "fixture": "warning_only.log",
+    "first_code": null
+  },
+  {
+    "fixture": "exit_only.log",
+    "first_code": null
+  },
+  {
+    "fixture": "truncated.log",
+    "first_code": null
+  },
+  {
+    "fixture": "empty.log",
+    "first_code": null
+  },
+  {
+    "fixture": "ambiguous.log",
+    "first_code": null
+  },
+  {
+    "fixture": "json_input.log",
+    "first_code": null
+  },
+  {
+    "fixture": "success.log",
+    "first_code": null
+  },
+  {
+    "fixture": "injection.log",
+    "first_code": null
+  },
+  {
+    "fixture": "warning_before_error.log",
+    "first_code": "python.missing-module"
+  },
+  {
+    "fixture": "cascade.log",
+    "first_code": "python.missing-module"
+  }
+]

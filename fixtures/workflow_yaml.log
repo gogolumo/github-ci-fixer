@@ -1,0 +1,2 @@
+Invalid workflow file: .github/workflows/ci.yml#L12
+Unexpected value 'steps'
