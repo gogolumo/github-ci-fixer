@@ -57,6 +57,13 @@ class Diagnostics(unittest.TestCase):
         )
         self.assertNotIn("caused_by", report["findings"][1])
 
+    def test_unknown_error_evidence_without_a_fabricated_cause(self):
+        report = analyze("fatal: unsupported failure detail\n")
+        self.assertEqual(report["assessment"], "insufficient")
+        self.assertEqual(report["findings"], [])
+        self.assertEqual(report["unclassified_errors"][0]["line"], 1)
+        self.assertIn("unsupported failure detail", markdown(report))
+
     def test_secret_redaction_and_line_preservation(self):
         token = "ghp_" + "a" * 36
         log = f"TOKEN={token}\n-----BEGIN RSA PRIVATE KEY-----\nprivatebody\n-----END RSA PRIVATE KEY-----\nModuleNotFoundError: No module named 'x'\nAuthorization: Bearer example-private-value\n"

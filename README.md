@@ -82,7 +82,8 @@ python3 tools/benchmark.py
 python3 tools/build_release.py build free/github-ci-fixer release/github-ci-fixer-free.zip
 ```
 
-Activate the virtual environment before installing developer tools. See
+Activate the virtual environment before the pip/check commands: `source .venv/bin/activate`
+on macOS/Linux, or `.venv\Scripts\Activate.ps1` in Windows PowerShell. See
 [contributing](CONTRIBUTING.md) for lint/type/format and audit commands. ZIP builder produces a
 SHA-256 sidecar and validates root layout, links, unsafe paths, secret signatures, sizes and an
 extracted trusted-package smoke. This is submission preparation, not Agensi approval.

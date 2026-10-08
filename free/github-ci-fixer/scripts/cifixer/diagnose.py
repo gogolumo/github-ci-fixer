@@ -1,5 +1,7 @@
 """Evidence extraction and cautious ordering; no inferred numerical certainty."""
 
+import re
+
 from .ingest import ingest
 from .rules import COMPILED, EXIT, WARNING
 
@@ -16,6 +18,7 @@ def analyze(text: str, source: str = "saved-log", edition: str = "free") -> dict
     findings: list[dict] = []
     warnings: list[dict] = []
     secondary: list[dict] = []
+    unclassified: list[dict] = []
     seen = set()
     for index, row in enumerate(rows):
         message = row["text"]
@@ -27,9 +30,11 @@ def analyze(text: str, source: str = "saved-log", edition: str = "free") -> dict
             if len(secondary) < 20:
                 secondary.append(row)
             continue
+        matched = False
         for rule, pattern in COMPILED:
             if not pattern.search(message):
                 continue
+            matched = True
             identity = (rule.code, row["job"], row["step"])
             if identity in seen:
                 continue
@@ -56,6 +61,12 @@ def analyze(text: str, source: str = "saved-log", edition: str = "free") -> dict
                 }
             )
             break
+        if (
+            not matched
+            and re.search(r"(?i)\b(?:error|fatal|failed|failure)\b", message)
+            and len(unclassified) < 20
+        ):
+            unclassified.append(row)
         if len(findings) >= 100:
             notes.append("Finding limit reached; analysis incomplete")
             break
@@ -73,6 +84,7 @@ def analyze(text: str, source: str = "saved-log", edition: str = "free") -> dict
         "assessment": "signature-supported" if findings else "insufficient",
         "first_meaningful_error": findings[0]["id"] if findings else None,
         "findings": findings,
+        "unclassified_errors": unclassified,
         "secondary_exit_markers": secondary,
         "warnings": warnings,
         "missing_information": notes,

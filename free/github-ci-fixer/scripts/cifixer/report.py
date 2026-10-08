@@ -55,6 +55,18 @@ def markdown(report: dict) -> str:
             "Status: not-run. This is a recommendation, not a tested repair.",
             "",
         ]
+    if report.get("unclassified_errors"):
+        lines += [
+            "## Unclassified error candidates",
+            "",
+            "These lines need further investigation; no root cause is inferred.",
+            "",
+        ]
+        for evidence in report["unclassified_errors"]:
+            lines.append(
+                f"- {safe(evidence['source'])}:{evidence['line']}: {safe(evidence['text'])}"
+            )
+        lines.append("")
     for title, values in (
         ("Missing information", report["missing_information"]),
         ("Limitations", report["limitations"]),
