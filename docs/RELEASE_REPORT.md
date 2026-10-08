@@ -18,7 +18,7 @@ JSON/Markdown verification records. No automatic changes/push/merge/deploy.
 
 Local host: macOS arm64, Python 3.14.6. Ruff check and format, mypy, compileall and skill-validator
 metadata checks passed. Free: 14 unittest methods and 37/37 controlled benchmark cases. Pro:
-17 unittest methods with 14 premium signature scenarios. These synthetic results are not
+18 unittest methods with 14 premium signature scenarios. These synthetic results are not
 real-world accuracy, repair rates or measured time savings.
 
 Actual Pro verification in disposable task-authored code recorded an assertion failure before a
@@ -30,7 +30,8 @@ are inconclusive, not verified success.
 
 Codex runtime QA for Free passed: it ran the analyzer, ignored malicious log instructions and
 kept repair verification not-run. Claude runtime QA was blocked: OAuth session expired and could
-not be refreshed. Pro runtime-host QA and automatic discovery on all agents are not certified.
+not be refreshed. Codex runtime QA for Pro also passed on synthetic multi-job evidence, preserving not-run and
+ignoring the embedded instruction. Automatic discovery on all agents is not certified.
 To retry Claude, authenticate locally with `claude auth login`, then run the bundled synthetic
 skill example in a restricted test directory. Never paste credentials into chat.
 
@@ -45,7 +46,8 @@ Input, traversal, symlink/special-file, binary/oversize/line limits, secret-reda
 injection, hostile ZIP, metadata, forged-plan, changed-snapshot, environment filtering, timeout,
 output limit, archive independence and reproducibility checks passed. Redaction is best effort;
 verification runs approved repository code and is not a sandbox. Git-ignored state is not fully
-bound by snapshots. Windows batch wrappers are declined. Workflow inspection is not full YAML
+bound by snapshots. Windows batch wrappers are declined. CRLF workflow proposals preserve original line endings
+and passed an actual git apply regression check. Workflow inspection is not full YAML
 validation, matrix evaluation or arbitrary patch generation.
 
 Public Free history paths and runtime imports were audited: no premium source/archive present.
@@ -65,7 +67,8 @@ The matrix targets Ubuntu/macOS/Windows × Python 3.11/3.14. Read the actual lat
 below or the live Actions page; queued/cancelled jobs are never described as passing. Superseded
 runs were cancelled to avoid duplicate matrices. Local macOS checks passed independently.
 An initial private Windows matrix failed mypy on os.killpg/SIGKILL narrowing; fixed by explicit
-sys.platform branches. The fix also passed local mypy --platform win32. These initial failures
+sys.platform branches. The fix also passed local mypy --platform win32. A subsequent Windows runtime failure
+exposed CRLF proposal filtering, which was fixed and regression-tested. These initial failures
 are retained as evidence; final matrix must validate the revised source.
 
 ## Packages
@@ -79,8 +82,8 @@ review; Pro ZIP must not be attached to the public PR or workflow artifacts.
 
 ## Remaining manual launch steps
 
-1. Complete/review all required matrix and agent-runtime checks; resolve actual failures. Full
-   macOS hosted-runner coverage depends on queued GitHub runners. Claude auth is a user-local step.
+1. Complete/review all required matrix and agent-runtime checks; resolve actual failures. Any
+   still-queued Free hosted-runner checks must finish. Claude auth is a user-local step.
 2. Review author-retained licenses and listings. MIT Free allows reuse/resale with attribution;
    premium personal-use terms prohibit redistribution and remain subject to marketplace terms.
 3. Sign in to Agensi creator dashboard and complete enabled payout onboarding per current Terms.
@@ -93,3 +96,10 @@ review; Pro ZIP must not be attached to the public PR or workflow artifacts.
 Marketplace material: marketing/FREE_LISTING.md, separately private marketing/PRO_LISTING.md,
 COMPARISON.md and LAUNCH_CHECKLIST.md. Author Bohdan Dron; no sales, reviews, adoption or universal
 success claims. Remaining unsupported categories require agent reasoning with labeled hypotheses.
+
+## Observed platform verification
+
+Pro source commit 91411435d7b7de829bc4f0e1d4a0b56ee0c119b4 passed all six matrix jobs
+(Ubuntu/macOS/Windows × Python 3.11/3.14) in its authorized PRIVATE repository.
+Free source ec72a7b51312a8001dda8b37aa7822bd7b4ea2fd has five successful jobs and
+one queued macOS/Python 3.11 job at this snapshot. Final live states are in the local manifest.
