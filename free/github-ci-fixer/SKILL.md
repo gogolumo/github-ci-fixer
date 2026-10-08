@@ -36,3 +36,5 @@ missing evidence, [security](references/security.md) for limits, and the
 Example: `python3 scripts/ci_fixer.py examples/python-missing.log`
 
 Release: 1.0.1. Saved-log analysis never executes repository code.
+
+Read [1.0.1 diagnostic evidence and limits](references/diagnostics-1.0.1.md) for the new guarded signatures.

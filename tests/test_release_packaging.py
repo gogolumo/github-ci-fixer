@@ -66,7 +66,13 @@ class ReleasePackaging(unittest.TestCase):
             env = {k: v for k, v in os.environ.items() if k not in {"PYTHONPATH", "PYTHONHOME"}}
             env["PYTHONIOENCODING"] = "ascii"
             result = subprocess.run(
-                cli + [str(log)], cwd=elsewhere, env=env, capture_output=True, text=True, timeout=20
+                cli + [str(log)],
+                cwd=elsewhere,
+                env=env,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                timeout=20,
             )
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn("Python import failed", result.stdout)

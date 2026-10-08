@@ -14,3 +14,5 @@ network outage diagnosis and arbitrary compiler languages are outside Free's tes
 Use the report's specific recommendation and verification guidance. Keep warnings separate;
 exit markers only describe command failure. Obtain the preceding command and complete failed-step
 output when evidence is insufficient. No code or repository test is executed by analysis.
+
+See [new diagnostic signatures](diagnostics-1.0.1.md) for formatting, filesystem and contextual assertion evidence requirements.
