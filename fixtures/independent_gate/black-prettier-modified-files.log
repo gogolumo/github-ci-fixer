@@ -1,0 +1,10 @@
+lint	Run pre-commit hooks	2026-10-08T18:32:08.1451049Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+lint	Run pre-commit hooks	2026-10-08T18:32:08.1451605Z pre-commit run --show-diff-on-failure --color=always --all-files
+lint	Run pre-commit hooks	2026-10-08T18:32:09.1744401Z isort....................................................................Passed
+lint	Run pre-commit hooks	2026-10-08T18:32:11.6262002Z flake8...................................................................Passed
+lint	Run pre-commit hooks	2026-10-08T18:32:19.6802209Z mypy.....................................................................Passed
+lint	Run pre-commit hooks	2026-10-08T18:32:21.7774522Z prettier.................................................................Failed
+lint	Run pre-commit hooks	2026-10-08T18:32:21.7777451Z - hook id: prettier
+lint	Run pre-commit hooks	2026-10-08T18:32:21.7778424Z - files were modified by this hook
+lint	Run pre-commit hooks	2026-10-08T18:32:21.9324118Z ##[error]Process completed with exit code 1.
+lint	Run pre-commit hooks	2026-10-08T18:32:21.9332861Z ##[end-action id=__pre-commit_action.__run_3;outcome=failure;conclusion=failure;duration_ms=13790]

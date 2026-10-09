@@ -1,0 +1,104 @@
+{
+  "archive": "github-ci-fixer-free-1.0.1.zip",
+  "bytes": 19295,
+  "sha256": "1976d03aa094eee7c65c741c2b84e03a4487e17cfc3d707bc45c68bf9defadac",
+  "skill": "github-ci-fixer",
+  "layout": "skill-folder",
+  "skill_directory": "github-ci-fixer",
+  "files": 16,
+  "file_manifest": [
+    {
+      "path": "github-ci-fixer/LICENSE.txt",
+      "bytes": 1068,
+      "sha256": "7f04f2bd13a1eb670616669f9ca52e6208aa386b5ad2d3cc69d2d695a3369a39"
+    },
+    {
+      "path": "github-ci-fixer/README.md",
+      "bytes": 1048,
+      "sha256": "5c3326568ffd44f6e0f8ca8a2c124fa09c3a53b87650956aba70f620c9449ef0"
+    },
+    {
+      "path": "github-ci-fixer/SKILL.md",
+      "bytes": 2272,
+      "sha256": "2cbca598c9c0ac12a6bf78f7e51701104cac69090d1027158ac075fa8062a379"
+    },
+    {
+      "path": "github-ci-fixer/examples/python-missing.log",
+      "bytes": 159,
+      "sha256": "702b93a84bd22eb49704bb3537600b75471d8126282f4f576f6ec4bad48b8028"
+    },
+    {
+      "path": "github-ci-fixer/examples/python-missing.md",
+      "bytes": 578,
+      "sha256": "ade94930e8515e4d7139527a02b18ebc7673c5f62c6480e0f141a61b0b9639dd"
+    },
+    {
+      "path": "github-ci-fixer/examples/python-missing.report.md",
+      "bytes": 1588,
+      "sha256": "cd14a6bc69bc3d1fcda7b7c52447a6d13c0b51d116c5d35b3232d887592e90b7"
+    },
+    {
+      "path": "github-ci-fixer/references/diagnostics-1.0.1.md",
+      "bytes": 2735,
+      "sha256": "6c32e4741dacf5c36c60ec30fe4b8f7b3ca31093a40855ec7ca78036660a5376"
+    },
+    {
+      "path": "github-ci-fixer/references/security.md",
+      "bytes": 1878,
+      "sha256": "7b6173ed263445e0a6ace9a4d13ec6df490858d0f65516b6e3ed62f76a02e8f4"
+    },
+    {
+      "path": "github-ci-fixer/references/troubleshooting.md",
+      "bytes": 1286,
+      "sha256": "98268a8ef3e76f95ee875d7bc17e1247d457b0d7701c92b3891760035b391fd9"
+    },
+    {
+      "path": "github-ci-fixer/scripts/ci_fixer.py",
+      "bytes": 1427,
+      "sha256": "2be09a4dd7b2487e9b349f77d4f73be67648b3f9564505b6aeabbeab4fe91f3d"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/__init__.py",
+      "bytes": 91,
+      "sha256": "f3d446c8cbf578f8ea2326aa1dfe5cc5bbd289f6eb091412825a58ab4580d508"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/diagnose.py",
+      "bytes": 4976,
+      "sha256": "ab2bf97e985c3d2ffeba5f24150e152b3d75db219785499ae01a77bb1b9788b3"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/ingest.py",
+      "bytes": 1688,
+      "sha256": "aa504bc0c1e00369a37b49d0a4e9f4cce7dfe1efb1009d3b2a236f55ea2c1c81"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/report.py",
+      "bytes": 3192,
+      "sha256": "85b2e28940d5be8e74aed7bf0dc0afee4631faeeb729e9579da4af145435419e"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/rules.py",
+      "bytes": 12130,
+      "sha256": "54f0019c2766fb1e63f111908f66e606b033553c9bb97e92e3a7d3c021170eaf"
+    },
+    {
+      "path": "github-ci-fixer/scripts/cifixer/security.py",
+      "bytes": 2500,
+      "sha256": "26afe2570e84734c7de5968f2a6ae587c4d863b3e1ef294acd55a13a2a921eb2"
+    }
+  ],
+  "structural_validation": "passed",
+  "smoke": "passed",
+  "ready_for_submission_review": true,
+  "marketplace_packaging": "locally-validated",
+  "marketplace_approval": "not-requested",
+  "release_version": "1.0.1",
+  "release_gate_date": "2026-10-09",
+  "reproducibility": {
+    "identical_second_build": true,
+    "python": "3.14.6",
+    "zlib": "1.2.12",
+    "scope": "same release host and compressor; cross-compressor identity not promised"
+  }
+}

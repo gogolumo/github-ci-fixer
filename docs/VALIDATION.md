@@ -1,4 +1,11 @@
-# Validation status — release candidate
+# Validation status
+
+For the current 1.0.1 final gate, see [release results](FINAL_RELEASE_REPORT_1.0.1.md),
+[buyer/host tests](BUYER_INSTALLATION_1.0.1.md), [independent cases](INDEPENDENT_EVALUATION_1.0.1.md)
+and [packaging correction](MARKETPLACE_PACKAGING_GATE.md). The earlier queued CI/authentication
+observations below describe the initial candidate only.
+
+# Historical 1.0.0 validation snapshot
 
 Local host: macOS arm64, Python 3.14.6. Free: 14 unittest methods including 37 known diagnostic
 scenarios passed. Pro (separate private tree): 18 unittest methods including 12 premium signatures

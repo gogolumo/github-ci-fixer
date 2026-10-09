@@ -11,11 +11,16 @@ from cifixer.security import read_text
 
 
 def main(argv=None) -> int:
+    # Reports are UTF-8 even when Windows pipes or a host select a legacy encoding.
+    for stream in (sys.stdout, sys.stderr):
+        configure = getattr(stream, "reconfigure", None)
+        if configure is not None:
+            configure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(
         description="Diagnose saved GitHub Actions UTF-8 text logs offline"
     )
     parser.add_argument("log", type=Path)
-    parser.add_argument("--version", action="version", version="GitHub CI Fixer Free 1.0.0")
+    parser.add_argument("--version", action="version", version="GitHub CI Fixer Free 1.0.1")
     args = parser.parse_args(argv)
     try:
         report = analyze(read_text(args.log), args.log.name)

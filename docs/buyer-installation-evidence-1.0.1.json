@@ -1,0 +1,35 @@
+{
+  "review_date": "2026-10-09",
+  "buyer": {
+    "archive": "github-ci-fixer-free-1.0.1.zip",
+    "sha256": "1976d03aa094eee7c65c741c2b84e03a4487e17cfc3d707bc45c68bf9defadac",
+    "layout": "skill-folder",
+    "edition": "free",
+    "environment": "fresh venv, no pip or third-party packages",
+    "offline_markdown": "passed",
+    "unrelated_cwd_utf8_crlf": "passed",
+    "agent_host": "not-tested-by-this-tool",
+    "marketplace_acceptance": "unverified",
+    "trusted_fixture_execution": "not-run",
+    "online_collection": "not-run"
+  },
+  "codex": {
+    "version": "0.160.0",
+    "archive_sha256": "1976d03aa094eee7c65c741c2b84e03a4487e17cfc3d707bc45c68bf9defadac",
+    "fresh_project_skill_location": ".agents/skills",
+    "explicit_skill_invocation": true,
+    "discovery": "passed",
+    "offline_cli": "passed",
+    "command_events_reviewed": 3,
+    "transcript_sha256": "def1d595e1bd3a1e950651cdcf72160c5b4bf0c0e369291c535dd9919becd9c5",
+    "fixture_injection_executed": false,
+    "verification": "not-run",
+    "limits": "Controlled explicit-invocation fixture only; not general prompt-injection resistance or automatic activation proof"
+  },
+  "claude": {
+    "version": "2.1.288",
+    "authentication": "none",
+    "activation_runtime": "unverified"
+  },
+  "marketplace_acceptance": "unverified"
+}

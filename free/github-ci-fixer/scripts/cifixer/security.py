@@ -7,7 +7,8 @@ from pathlib import Path
 
 MAX_BYTES = 8_000_000
 MAX_LINE = 16_000
-ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
+# Some GitHub logs spell ESC as the printable caret sequence ^[.
+ANSI = re.compile(r"(?:\x1b|\^\[)\[[0-?]*[ -/]*[@-~]")
 SECRET_PATTERNS = (
     re.compile(
         r"\b(?:gh[pousr]_[A-Za-z0-9_]{12,}|github_pat_[A-Za-z0-9_]{12,}|AKIA[A-Z0-9]{16}|sk-[A-Za-z0-9_-]{16,})\b"

@@ -1,0 +1,7 @@
+windows	Run tests	##[group]Run npm run test-ci
+windows	Run tests	774 passing
+windows	Run tests	1 pending
+windows	Run tests	1 failing
+windows	Run tests	Error: expected "Set-Cookie" of "Expires=Tue, 06 Oct 2026 21:22:43 GMT", got "Expires=Tue, 06 Oct 2026 21:22:44 GMT"
+windows	Run tests	    at Context.<anonymous> (test\res.clearCookie.js:64:8)
+windows	Run tests	##[error]Process completed with exit code 1.

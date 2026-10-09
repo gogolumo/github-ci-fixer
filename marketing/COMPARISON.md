@@ -18,6 +18,6 @@
 
 Choose Free for a useful single saved-log diagnosis. Choose Pro for recurring run-wide evidence
 collection, report automation and a reviewed verification record. No diagnosis is a verified repair.
-Pro is not a general autonomous code fixer, full YAML parser or hosted service. License/purchase
+Verification is opt-in and creates no sandbox. Installed dependencies, child tools, home configuration and network inputs remain outside its captured-source checks. Pro supports one narrow diff recipe. License/purchase
 terms apply; compatibility and platform test status are documented in the release report.
 Purchase link: **pending Agensi publication**. No final marketplace URL exists yet.

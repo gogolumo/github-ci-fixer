@@ -1,0 +1,10 @@
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2767667Z ruff check...............................................................^[[42mPassed^[[m
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986164Z ruff format..............................................................^[[41mFailed^[[m
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986492Z ^[[2m- hook id: ruff-format^[[m
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986674Z ^[[2m- files were modified by this hook^[[m
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986785Z 
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986855Z 2 files reformatted, 45 files left unchanged
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2986963Z 
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2987028Z pre-commit hook(s) made changes.
+lint	UNKNOWN STEP	2026-09-28T16:56:10.2987265Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+lint	UNKNOWN STEP	2026-09-28T16:56:10.3281075Z ##[error]Process completed with exit code 1.

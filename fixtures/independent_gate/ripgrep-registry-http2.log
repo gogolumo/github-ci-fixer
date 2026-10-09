@@ -1,0 +1,25 @@
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.3169962Z cargo build --verbose --workspace 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.3219347Z shell: /usr/bin/bash -e {0}
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.3583550Z     Updating crates.io index
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4611150Z error: failed to get `jobserver` as a dependency of package `cc v1.4.0`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4611839Z     ... which satisfies dependency `cc = "^1.0.73"` (locked to 1.4.0) of package `pcre2-sys v0.2.10`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4612590Z     ... which satisfies dependency `pcre2-sys = "^0.2.10"` (locked to 0.2.10) of package `pcre2 v0.2.11`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4613502Z     ... which satisfies dependency `pcre2 = "^0.2.6"` (locked to 0.2.11) of package `grep-pcre2 v0.1.10 (/home/runner/work/ripgrep/ripgrep/crates/pcre2)`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4614551Z     ... which satisfies path dependency `grep-pcre2` (locked to 0.1.10) of package `grep v0.4.1 (/home/runner/work/ripgrep/ripgrep/crates/grep)`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4615556Z     ... which satisfies path dependency `grep` (locked to 0.4.1) of package `ripgrep v15.2.0 (/home/runner/work/ripgrep/ripgrep)`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4616194Z 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4616282Z Caused by:
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4616557Z   failed to load source for dependency `jobserver`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4616806Z 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4616877Z Caused by:
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617053Z   unable to update registry `crates-io`
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617203Z 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617274Z Caused by:
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617451Z   download of jo/bs/jobserver failed
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617596Z 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617657Z Caused by:
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617810Z   curl failed
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617907Z 
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4617967Z Caused by:
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4618132Z   [16] Error in the HTTP2 framing layer
+test (pinned, ubuntu-latest, 1.96.0)	UNKNOWN STEP	2026-10-03T01:23:28.4640875Z ##[error]Process completed with exit code 101.

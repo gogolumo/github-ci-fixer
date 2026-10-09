@@ -1,0 +1,15 @@
+linux	UNKNOWN STEP	2026-10-07T11:10:32.2072614Z ##[group]Run cargo fmt --all -- --check
+linux	UNKNOWN STEP	2026-10-07T11:10:32.2072941Z ^[[36;1mcargo fmt --all -- --check^[[0m
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3449370Z Diff in /home/runner/work/PlaySparse/PlaySparse/crates/playsparse-desktop/src/lib.rs:1493:
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3453745Z                  thread::sleep(Duration::from_millis(10))
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3454146Z              }
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3454414Z              Err(error) => {
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3454730Z -                return Err(error)
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3455279Z -                    .context("PlaySparse is already using this library or the lock is unavailable");
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3455900Z +                return Err(error).context(
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3456410Z +                    "PlaySparse is already using this library or the lock is unavailable",
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3456901Z +                );
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3457090Z              }
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3457261Z          }
+linux	UNKNOWN STEP	2026-10-07T11:10:32.3457420Z      }
+linux	UNKNOWN STEP	2026-10-07T11:10:32.4763061Z ##[error]Process completed with exit code 1.

@@ -4,6 +4,7 @@
 import ast
 import json
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +17,22 @@ SECRET = re.compile(
 
 def main():
     failures = []
+    tracked = (
+        subprocess.run(
+            ["git", "-C", str(ROOT), "ls-files", "-z"],
+            capture_output=True,
+            check=True,
+            timeout=10,
+        )
+        .stdout.decode("utf-8")
+        .split("\0")
+    )
+    for name in filter(None, tracked):
+        parts = Path(name).parts
+        if Path(name).suffix == ".zip" or any(
+            p in {"release", "premium", "github-ci-fixer-pro", "pro", ".venv"} for p in parts
+        ):
+            failures.append(f"Forbidden tracked distribution/source path: {name}")
     for path in ROOT.rglob("*"):
         relative = path.relative_to(ROOT)
         if any(
@@ -58,6 +75,9 @@ def main():
             failures.append(
                 f"Network, execution or premium dependency in public runtime: {relative}"
             )
+    for path in (ROOT / ".github/workflows").glob("*.yml"):
+        if "upload-artifact" in path.read_text(encoding="utf-8"):
+            failures.append("Public artifact uploads require an explicit Free-only allowlist")
     print(
         json.dumps(
             {"public_boundary": "failed" if failures else "passed", "failures": failures}, indent=2

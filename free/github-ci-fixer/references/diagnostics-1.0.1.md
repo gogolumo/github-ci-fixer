@@ -1,0 +1,13 @@
+# Diagnostic additions in 1.0.1
+
+Rules report observed failure categories; unique causes remain hypotheses. Commands below are
+manual guidance after review, never commands automatically taken from an untrusted log.
+
+| Code | Required evidence and positive example | Negative controls | Recommendation and verification | Limits |
+| --- | --- | --- | --- | --- |
+| rust.format | Active cargo fmt with --check in the same job/step, then `Diff in src/lib.rs:12:` | Diff alone; successful formatting; fmt without --check; changed job/step or later command | With CI's toolchain/configuration, run cargo fmt --all in an approved checkout, review its diff, then cargo fmt --all -- --check; run build/tests separately | Formatting differs; compilation and code correctness are untested. Missing command context stays unknown. |
+| windows.filesystem | Recognized-filesystem rejection text, `[WinError 1005]` or `(os error 1005)` | Different code without recognized-filesystem message; warning-only line; generic FAIL launch marker | Identify mount/read/write/launch operation; inspect previous success markers, volume format/mount/driver and operation support, then reproduce that exact operation in a matching isolated Windows environment | Driver support, mount state, volume and application behavior are hypotheses. No specific WinFsp cause or automatic driver/system change. |
+| python.format | Failed ruff format pre-commit heading followed in the same job/step by ruff-format hook ID and modified-files details | Custom hook; modified-files text alone; missing modification detail; unrelated job/step | Run the same pre-commit run ruff-format --all-files after review, inspect intended changes, then rerun until no files change; run tests/types separately | Limited to this explicit pre-commit output; arbitrary formatter errors and formatting correctness are not established. |
+| node.test contextual assertion | npm/yarn/pnpm or known JS test command, expected/got Error and nearby JavaScript source location in the same job/step | Missing command/location; unrelated step; native FAIL launch output | Reproduce the named assertion with matching Node/dependencies; inspect expected/actual values and time-sensitive inputs before changing code or assertions | An assertion mismatch does not establish a production defect or prove timing flakiness. |
+
+Source evidence: PlaySparse runs37612144554 and37612038222, Requests36454554828 and Express37533322411. Full provenance and actual edition outcomes are in the release's real-world report, outside this runtime package. Synthetic guards and actual authentic excerpts are tested separately. Pro additionally supports observed Python type-check diagnostics; Free leaves these insufficient.

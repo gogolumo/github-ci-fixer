@@ -1,0 +1,11 @@
+typing	UNKNOWN STEP	2026-10-07T14:02:08.0013506Z typing: commands[0]> mypy
+typing	UNKNOWN STEP	2026-10-07T14:02:09.0770745Z src/flask/app.py:206: error: Incompatible types in assignment (expression has
+typing	UNKNOWN STEP	2026-10-07T14:02:09.0771705Z type "Mapping[str, Any]", base class "App" defined the type as "dict[str, Any]")
+typing	UNKNOWN STEP	2026-10-07T14:02:09.0772574Z  [assignment]
+typing	UNKNOWN STEP	2026-10-07T14:02:09.0772984Z         default_config: cabc.Mapping[str, t.Any] = {
+typing	UNKNOWN STEP	2026-10-07T14:02:09.0773500Z                                                    ^
+typing	UNKNOWN STEP	2026-10-07T14:02:09.1745382Z Found 1 error in 1 file (checked 27 source files)
+typing	UNKNOWN STEP	2026-10-07T14:02:09.1823366Z typing: exit 1 (1.18 seconds) /home/runner/work/flask/flask> mypy pid=2591
+typing	UNKNOWN STEP	2026-10-07T14:02:09.1828706Z   typing: FAIL code 1 (2.57=setup[1.39]+cmd[1.18] seconds)
+typing	UNKNOWN STEP	2026-10-07T14:02:09.1829303Z   evaluation failed :( (2.65 seconds)
+typing	UNKNOWN STEP	2026-10-07T14:02:09.2494196Z ##[error]Process completed with exit code 1.

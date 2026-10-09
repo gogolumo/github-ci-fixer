@@ -1,0 +1,5 @@
+##[group]Run git diff --check
+Diff in src/lib.rs:1493:
+- return Err(error);
++ return Err(error).context("fixture");
+##[error]Process completed with exit code 1.

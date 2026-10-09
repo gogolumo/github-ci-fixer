@@ -1,0 +1,7 @@
+windows	Acceptance	PASS mount
+windows	Acceptance	PASS exact file read
+windows	Acceptance	PASS overlay write
+windows	Acceptance	FAIL launch test fixture
+windows	Acceptance	Error: The volume does not contain a recognized file system.
+windows	Acceptance	Please make sure that all required file system drivers are loaded and that the volume is not corrupted. (os error 1005)
+windows	Acceptance	##[error]Process completed with exit code 1.

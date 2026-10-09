@@ -1,0 +1,21 @@
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:29.7979150Z ##[group]Run npm run test-ci
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:29.7979591Z ^[[36;1mnpm run test-ci^[[0m
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:29.7991766Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:29.7992086Z ##[endgroup]
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:30.3915743Z 
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:30.3916362Z > express@4.22.3 test-ci
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:30.3917217Z > nyc --exclude examples --exclude test --exclude benchmarks --reporter=lcovonly --reporter=text npm test
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0028418Z   774 passing (2s)
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0029099Z   1 pending
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0029354Z   1 failing
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0029491Z 
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0031901Z   1) res
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0032232Z        .clearCookie(name, options)
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0032688Z          should set both maxAge and expires when passed:
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0034099Z      Error: expected "Set-Cookie" of "sid=; Max-Age=10; Path=/; Expires=Tue, 06 Oct 2026 21:22:43 GMT", got "sid=; Max-Age=10; Path=/; Expires=Tue, 06 Oct 2026 21:22:44 GMT"
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0035078Z       at Context.<anonymous> (test\res.clearCookie.js:64:8)
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0035641Z       at process.processImmediate (node:internal/timers:574:21)
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0036071Z   ----
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0036527Z       at Test._assertHeader (node_modules\supertest\lib\test.js:236:14)
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.0037159Z       at D:\a\express\express\node_modules\supertest\lib\test.js:308:13
+Run tests (windows-latest, 24)	UNKNOWN STEP	2026-10-06T21:22:34.1475440Z ##[error]Process completed with exit code 1.

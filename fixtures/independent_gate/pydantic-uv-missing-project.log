@@ -1,0 +1,6 @@
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1360047Z ##[group]Run uv sync --only-group tweet
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1361306Z uv sync --only-group tweet
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1563081Z   UV_PYTHON: 3.14
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1563907Z ##[endgroup]
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1730332Z error: No `pyproject.toml` found in current directory or any parent directory
+Send tweet	UNKNOWN STEP	2026-10-08T14:35:00.1741828Z ##[error]Process completed with exit code 2.
