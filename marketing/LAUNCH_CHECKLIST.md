@@ -27,3 +27,11 @@ third-party YAML or the marketplace scanner's undocumented behavior. Its
 authoritative for submission limits. Extract into a parent directory and enter
 the generated skill folder. Actual scanner/manual review and buyer-download or
 host QA remain separate from local validation; record only tests actually run.
+
+Final gate evidence: [release decision](../docs/FINAL_RELEASE_REPORT_1.0.1.md),
+[complete archive manifest](../docs/release-manifest-1.0.1.json), and
+[buyer/host QA](../docs/BUYER_INSTALLATION_1.0.1.md). Local engineering checks are complete;
+publication remains NO-GO until the listed external gates are cleared. Codex explicit discovery
+passed; complete a second host's activation/runtime QA before marketplace release. Claude is
+presently unauthenticated and unverified. Record actual scanner/manual review and buyer downloads,
+then obtain owner authorization for publication. Keep the exact submitted digest in the release record.

@@ -1,8 +1,8 @@
 # Final release gate — GitHub CI Fixer Free 1.0.1
 
-Release review date: 2026-10-09. **Engineering decision: NO-GO pending new current-head CI.**
-Local checks and final archives passed; the six OS/Python jobs must still validate the latest
-changes. **Marketplace publication: NO-GO** until the external gates below are complete.
+Release review date: 2026-10-09. **Engineering decision: GO for owner review.**
+Validated code, packaging and clean-installation checks passed, including six OS/Python CI jobs.
+**Marketplace publication: NO-GO** until the external gates below are complete.
 Neither PR has been merged; no Agensi submission/publication has occurred.
 
 ## Final distribution and reproducibility
@@ -34,8 +34,11 @@ This validator is not the real marketplace scanner or a complete secret detector
 - Claude Code 2.1.288 has no active authentication; its discovery/runtime test is **unverified**.
   Other hosts and real Agensi buyer downloads are **unverified**.
 - CI matrix: Ubuntu/macOS/Windows × Python 3.11/3.14, including offline fresh buyer smoke and
-  independent-case replay. Current status: [PR #2 checks](https://github.com/gogolumo/github-ci-fixer/pull/2/checks).
-  New current-head run/receipt will be recorded after push. Earlier acceptance runs do not satisfy this gate.
+  independent-case replay: **6/6 successful** in [run 37895364969](https://github.com/gogolumo/github-ci-fixer/actions/runs/37895364969) at
+  source head `7a8991f17e83b5e876f20042f36c98b832ffd374`. [Machine receipt](ci-evidence-1.0.1.json) records all jobs/steps.
+  This receipt precedes the documentation commit recording it. That final documentation head is
+  checked again before delivery; live status is [PR #2 checks](https://github.com/gogolumo/github-ci-fixer/pull/2/checks),
+  and its exact receipt is local at `release/qa/ci-current-head-1.0.1.json`.
 
 The original 37 controlled synthetic cases matched; this is regression matching, not field accuracy.
 Public-boundary audit passed. Free analysis performs no repository execution or network access.

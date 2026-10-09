@@ -35,7 +35,7 @@ verification must pass. No unknown third-party repository tests are executed.
 
 ## Agent Skills installation and discovery
 
-For Codex, extract directly into a fresh project parent's `.agents/skills/`; the resulting
+For Codex, extract directly into a fresh project's `.agents/skills/`; the resulting
 skill file is `.agents/skills/github-ci-fixer/SKILL.md` or its `-pro` equivalent. Invoke
 `$github-ci-fixer` or `$github-ci-fixer-pro` with the saved log. Location and explicit invocation
 follow [OpenAI's skill documentation](https://learn.chatgpt.com/docs/build-skills).
@@ -60,8 +60,8 @@ second-host test and marketplace scanner/manual review remain external publicati
 ## Release evidence
 
 Archive identities and every contained file's size/hash are in
-[the complete manifest](release-manifest-1.0.1.json). Local raw host command transcripts and
-buyer receipts remain in ignored release directories. The final report records test results,
+[the complete manifest](release-manifest-1.0.1.json). [Buyer and host receipts](buyer-installation-evidence-1.0.1.json) summarize actual checks.
+Raw host command transcripts remain in ignored release directories. The final report records test results,
 CI provenance and publication gates; no marketplace approval or successful CI repair is implied.
 
 Free final archive: fresh offline Markdown, UTF-8/CRLF and unrelated-CWD checks passed.
