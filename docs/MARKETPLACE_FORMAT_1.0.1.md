@@ -1,7 +1,27 @@
-# Marketplace format check — 1.0.1
+# Marketplace archive format — final gate 1.0.1
 
-Checked 2026-10-08 against the [Agensi creator guide](https://www.agensi.io/learn/how-to-sell-skills-on-agensi) and [Agent Skills specification](https://agentskills.io/specification). Submission is a ZIP with valid SKILL.md plus supporting scripts/references. Our archives put SKILL.md directly at archive root and are extracted into a directory matching the skill name. Required name and description, optional license, valid UTF-8 and all relative Markdown references are checked. Runtime modules use Python's standard library.
+The previous flat-ZIP recommendation is superseded by the
+[packaging gate report](MARKETPLACE_PACKAGING_GATE.md).
+The [creator checklist](https://www.agensi.io/learn/skill-md-creator-checklist)
+(April 28, 2026) and
+[security-scan guide](https://www.agensi.io/learn/how-agensi-security-scan-works)
+(April 27, 2026) explicitly describe one named top-level skill folder with
+SKILL.md directly inside it. The older
+[seller guide](https://www.agensi.io/learn/how-to-sell-skills-on-agensi)
+(March 30, 2026) requires a ZIP containing SKILL.md and supporting files without
+specifying its directory level. It does not explicitly mandate a flat ZIP.
+Our earlier interpretation conflicted with the more specific guidance.
 
-Local validation rejects traversal, absolute paths, Windows device names, case collisions, hidden files, special files, symlinks, unsupported extensions, known credential signatures and oversized expanded archives. Deterministic ordering, timestamps and permissions produce stable hashes. Trusted extraction smoke runs from an unrelated directory; hostile arbitrary uploads require explicit digest approval for execution.
+Default release archives contain exactly one `github-ci-fixer/` or
+`github-ci-fixer-pro/` folder, with SKILL.md, scripts, references, examples and
+licenses inside. Source CLI paths remain unchanged. Extract into a parent
+directory and enter the generated folder; avoid an additional wrapper.
+Legacy flat archives require an explicit developer-only option and are not
+eligible for the validator's submission-review status.
 
-The 50 MB decimal package limit is our conservative policy, not a verified marketplace limit. Creator-dashboard requirements and automated/manual review may introduce additional checks. Terms page fetch timed out; existing licenses remain unchanged. No product listing has been submitted or approved.
+The 50,000,000-byte decimal size ceiling is a conservative local policy;
+creator-dashboard limits remain unverified. Actual Agensi submission, scanner
+acceptance, buyer-download handling and manual approval have not been tested.
+Local validation prepares an archive for review and cannot certify marketplace
+acceptance. See the packaging report for full manifests, extraction tests and
+reproducibility limits.

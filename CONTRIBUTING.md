@@ -8,8 +8,11 @@ python -m ruff format --check .
 python -m mypy
 python -m unittest discover -s tests -v
 python tools/benchmark.py
+python tools/real_world_benchmark.py
+python tools/independent_evaluation.py --summary
+python tools/buyer_installation.py --package-root free/github-ci-fixer
 python tools/audit_public.py
-python tools/build_release.py build free/github-ci-fixer release/github-ci-fixer-free.zip
+python tools/build_release.py build free/github-ci-fixer release/github-ci-fixer-free-1.0.1.zip
 ```
 
 Add realistic positive and negative fixtures when changing a rule; do not hardcode fixture names

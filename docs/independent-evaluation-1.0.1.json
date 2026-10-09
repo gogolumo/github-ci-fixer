@@ -1,0 +1,1256 @@
+{
+  "schema_version": "1.0",
+  "dataset": "independent-final-gate-1.0.1",
+  "collection_date": "2026-10-08",
+  "source_kind": "sanitized minimal excerpts from authentic public failed-job logs; no synthetic reproduction",
+  "selection_policy": "Convenience sample from recent public failures in repositories absent from the previous design set, retaining supported, unsupported and aggregate-only unknown observations. Expectations were saved before invoking either analyzer. This is not random sampling or generalization accuracy.",
+  "unique_failed_runs": 6,
+  "excerpt_cases": 7,
+  "human_evidence_state_counts": {
+    "supported": 1,
+    "unsupported": 5,
+    "unknown": 1
+  },
+  "editions_tested": [
+    "free",
+    "pro"
+  ],
+  "diagnostic_source_freeze_matched": true,
+  "diagnostic_source_differences": [],
+  "replay_expectation_checks": 14,
+  "replay_expectation_mismatches": [],
+  "false_positive_codes": {
+    "free": [],
+    "pro": []
+  },
+  "results": [
+    {
+      "id": "pytest-windows-timing-assertion",
+      "repository": "pytest-dev/pytest",
+      "run_id": 37653997861,
+      "run_url": "https://github.com/pytest-dev/pytest/actions/runs/37653997861",
+      "source_commit": "f45dd1973982d92e97d48565d4ecf66de73e4736",
+      "job": "build (windows-py311)",
+      "job_id": 112911245761,
+      "failed_step_from_api": "Test without coverage",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "pytest-dev-pytest-37653997861.log",
+      "raw_log_sha256": "a3821f19a010d273904c6392dcad8e2170b0528d63a5f6ece6309a9d4040826b",
+      "source_line_ranges": [
+        [
+          842,
+          855
+        ],
+        [
+          896,
+          904
+        ]
+      ],
+      "fixture": "pytest-windows-timing-assertion.log",
+      "fixture_sha256": "f0303a3fe20aa7c39cf026da65c5fa5726332b2d3e1a4adfbe1cd0f0377f9e79",
+      "expected_observed_category": "Python timing assertion differs from a threshold",
+      "evidence_state": "supported",
+      "expected_free_codes": [
+        "python.test"
+      ],
+      "expected_pro_codes": [
+        "python.test"
+      ],
+      "missing_evidence_and_limitations": "Actual duration is 0.1947 s against <0.1 s. The evidence does not establish whether scheduling variance, implementation or the threshold is responsible.",
+      "near_match_guard": null,
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.test"
+          ],
+          "findings": [
+            {
+              "code": "python.test",
+              "line": 12,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": [
+            {
+              "source": "pytest-windows-timing-assertion.log",
+              "line": 19,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "= 1 failed, 4551 passed, 146 skipped, 13 xfailed, 1 xpassed, 2 warnings in 467.56s (0:07:47) ="
+            },
+            {
+              "source": "pytest-windows-timing-assertion.log",
+              "line": 22,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "evaluation failed :( (481.77 seconds)"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes_from_preanalysis_evidence_review": [
+            "python.test"
+          ],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.test"
+          ],
+          "findings": [
+            {
+              "code": "python.test",
+              "line": 12,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": [
+            {
+              "source": "pytest-windows-timing-assertion.log",
+              "line": 19,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "= 1 failed, 4551 passed, 146 skipped, 13 xfailed, 1 xpassed, 2 warnings in 467.56s (0:07:47) ="
+            },
+            {
+              "source": "pytest-windows-timing-assertion.log",
+              "line": 22,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "evaluation failed :( (481.77 seconds)"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [],
+          "expected_codes_from_preanalysis_evidence_review": [
+            "python.test"
+          ],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "pytest-required-job-aggregate",
+      "repository": "pytest-dev/pytest",
+      "run_id": 37653997861,
+      "run_url": "https://github.com/pytest-dev/pytest/actions/runs/37653997861",
+      "source_commit": "f45dd1973982d92e97d48565d4ecf66de73e4736",
+      "job": "check",
+      "job_id": 112915498916,
+      "failed_step_from_api": "Decide whether the needed jobs succeeded or failed",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "pytest-dev-pytest-37653997861.log",
+      "raw_log_sha256": "a3821f19a010d273904c6392dcad8e2170b0528d63a5f6ece6309a9d4040826b",
+      "source_line_ranges": [
+        [
+          995,
+          1000
+        ]
+      ],
+      "fixture": "pytest-required-job-aggregate.log",
+      "fixture_sha256": "0f04ae7baad5bd48f86caf61b45d5227ccf72919e1b5c07d4eebf4d09b472295",
+      "expected_observed_category": "Required predecessor job failed; aggregate job contains no originating diagnostic",
+      "evidence_state": "unknown",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "This aggregate-only input omits the predecessor job diagnostic. Its exit status cannot identify the source failure.",
+      "near_match_guard": "An error exit marker alone must not become a Python test or module diagnostic.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 1,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "# \u274c Some of the required to succeed jobs failed \ud83d\ude22\ud83d\ude22\ud83d\ude22"
+            },
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 4,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "\u274c build \u2192 \ud83d\udd34 failure [required to succeed]"
+            },
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 6,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[end-action id=__re-actors_alls-green.outcome;outcome=failure;conclusion=failure;duration_ms=89]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 1,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "# \u274c Some of the required to succeed jobs failed \ud83d\ude22\ud83d\ude22\ud83d\ude22"
+            },
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 4,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "\u274c build \u2192 \ud83d\udd34 failure [required to succeed]"
+            },
+            {
+              "source": "pytest-required-job-aggregate.log",
+              "line": 6,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[end-action id=__re-actors_alls-green.outcome;outcome=failure;conclusion=failure;duration_ms=89]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "pydantic-artifact-lookup",
+      "repository": "pydantic/pydantic",
+      "run_id": 37818576440,
+      "run_url": "https://github.com/pydantic/pydantic/actions/runs/37818576440",
+      "source_commit": "0f10d3f2d8903fa0e6e7504f19b1d290c4fefd47",
+      "job": "upload-previews",
+      "job_id": 113453437205,
+      "failed_step_from_api": "Run dawidd6/action-download-artifact@d63b86af1b34672e53c440b1b83979861906bad7",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "pydantic-pydantic-37818576440.log",
+      "raw_log_sha256": "451f9336d7c5ddc3edeca72c07d1276450450121bc913ae6984844dd6d5ee318",
+      "source_line_ranges": [
+        [
+          134,
+          142
+        ]
+      ],
+      "fixture": "pydantic-artifact-lookup.log",
+      "fixture_sha256": "ee852b22fca1c7b1aff1d32754b19e023062c2b4d748ae4ea3aa1cf2327095be",
+      "expected_observed_category": "Artifact search found no matching eligible workflow run",
+      "evidence_state": "unsupported",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "The action reports allow-forks=false and a skipped fork. The excerpt does not prove that this is the sole reason no eligible artifacts matched.",
+      "near_match_guard": "No matching workflow artifacts are not a dependency resolver error or local missing-file proof.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-artifact-lookup.log",
+              "line": 9,
+              "job": "upload-previews",
+              "step": "UNKNOWN STEP",
+              "text": "##[error]no matching workflow run found with any artifacts?"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-artifact-lookup.log",
+              "line": 9,
+              "job": "upload-previews",
+              "step": "UNKNOWN STEP",
+              "text": "##[error]no matching workflow run found with any artifacts?"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "pydantic-uv-missing-project",
+      "repository": "pydantic/pydantic",
+      "run_id": 37784817707,
+      "run_url": "https://github.com/pydantic/pydantic/actions/runs/37784817707",
+      "source_commit": "fcdefa7198c4fc94a22eecf1a5b7926e20b9fc8a",
+      "job": "Send tweet",
+      "job_id": 113367256797,
+      "failed_step_from_api": "Run uv sync --only-group tweet",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "pydantic-pydantic-37784817707.log",
+      "raw_log_sha256": "adb7e94e51a5aaeadb5adff0db856b83529c35732c7fbe0b8d0be3e459cf70a2",
+      "source_line_ranges": [
+        [
+          79,
+          80
+        ],
+        [
+          87,
+          90
+        ]
+      ],
+      "fixture": "pydantic-uv-missing-project.log",
+      "fixture_sha256": "f8d73169162eab1823e3a770c3a66c90b771b4ebe7e165f9fd718198c912b799",
+      "expected_observed_category": "uv cannot find pyproject.toml in the current directory or its ancestors",
+      "evidence_state": "unsupported",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "The source diagnostic is explicit, but this exact uv form has no supported signature. The log does not identify the expected project directory or why the file is absent.",
+      "near_match_guard": null,
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-uv-missing-project.log",
+              "line": 5,
+              "job": "Send tweet",
+              "step": "UNKNOWN STEP",
+              "text": "error: No `pyproject.toml` found in current directory or any parent directory"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-uv-missing-project.log",
+              "line": 5,
+              "job": "Send tweet",
+              "step": "UNKNOWN STEP",
+              "text": "error: No `pyproject.toml` found in current directory or any parent directory"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "black-prettier-modified-files",
+      "repository": "psf/black",
+      "run_id": 37824955673,
+      "run_url": "https://github.com/psf/black/actions/runs/37824955673",
+      "source_commit": "86e2832de769156bc92d7828de69a5902bd42cce",
+      "job": "lint",
+      "job_id": 113475291148,
+      "failed_step_from_api": "Run pre-commit hooks",
+      "logged_step": "Run pre-commit hooks",
+      "raw_log_file": "psf-black-37824955673.log",
+      "raw_log_sha256": "35ad9858753937e875b471b4318e0239f3436a01f0b4966c4712c26ba2475d27",
+      "source_line_ranges": [
+        [
+          127,
+          128
+        ],
+        [
+          139,
+          144
+        ],
+        [
+          243,
+          244
+        ]
+      ],
+      "fixture": "black-prettier-modified-files.log",
+      "fixture_sha256": "e2cd84755236e7cf0b8e304d40fb1ff3429ef642987ba8ce461800d6c597d991",
+      "expected_observed_category": "Prettier pre-commit hook failed because it modified files",
+      "evidence_state": "unsupported",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "Formatter and changed-file condition are observed. The excerpt does not include all formatting diffs. Prettier formatting is outside current categories.",
+      "near_match_guard": "Failed + files modified + passing mypy is not the supported Ruff formatting hook or a type-check failure.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 1,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 2,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 6,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "prettier.................................................................Failed"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 10,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[end-action id=__pre-commit_action.__run_3;outcome=failure;conclusion=failure;duration_ms=13790]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 1,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 2,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 6,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "prettier.................................................................Failed"
+            },
+            {
+              "source": "black-prettier-modified-files.log",
+              "line": 10,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[end-action id=__pre-commit_action.__run_3;outcome=failure;conclusion=failure;duration_ms=13790]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "black-changelog-policy",
+      "repository": "psf/black",
+      "run_id": 37773541121,
+      "run_url": "https://github.com/psf/black/actions/runs/37773541121",
+      "source_commit": "41ec65edb284ae5b1081da5deef132404b00466a",
+      "job": "check",
+      "job_id": 113298695308,
+      "failed_step_from_api": "Grep CHANGES.md for PR number",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "psf-black-37773541121.log",
+      "raw_log_sha256": "7ab4de77a1d71424ec28b636f9fe268a9c7f06a0b6c75f412fa5d267701a7972",
+      "source_line_ranges": [
+        [
+          160,
+          163
+        ],
+        [
+          168,
+          169
+        ]
+      ],
+      "fixture": "black-changelog-policy.log",
+      "fixture_sha256": "fd61fc81deea13f59590a65c1ee20d72de9b85cfae18dc9dc8a0e13b27ca6aa1",
+      "expected_observed_category": "Repository policy requests a matching CHANGES.md entry or skip-news label",
+      "evidence_state": "unsupported",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "The emitted repository policy failure is identifiable, but no changelog category exists. No checkout was inspected and no label change was made.",
+      "near_match_guard": "A command exit code does not prove dependency, test, permissions or formatting failure.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    },
+    {
+      "id": "ripgrep-registry-http2",
+      "repository": "BurntSushi/ripgrep",
+      "run_id": 37085789735,
+      "run_url": "https://github.com/BurntSushi/ripgrep/actions/runs/37085789735",
+      "source_commit": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+      "job": "test (pinned, ubuntu-latest, 1.96.0)",
+      "job_id": 111095691469,
+      "failed_step_from_api": "Build ripgrep and all crates",
+      "logged_step": "UNKNOWN STEP",
+      "raw_log_file": "BurntSushi-ripgrep-37085789735.log",
+      "raw_log_sha256": "95addd6757f4c29c8e84d823353942599fe4c5040301aaa1f50ee89cb2c8f453",
+      "source_line_ranges": [
+        [
+          503,
+          504
+        ],
+        [
+          515,
+          537
+        ]
+      ],
+      "fixture": "ripgrep-registry-http2.log",
+      "fixture_sha256": "a1e7315d0db7a24d45b19cd4dde69c16e2fe7c2b45ae695bf0ffe944f2835a9e",
+      "expected_observed_category": "Cargo registry dependency download failed with curl HTTP2 framing error 16",
+      "evidence_state": "unsupported",
+      "expected_free_codes": [],
+      "expected_pro_codes": [],
+      "missing_evidence_and_limitations": "The registry HTTP2 transport diagnostic is explicit; transient network, proxy and peer causes are unproved. No dedicated transport category exists.",
+      "near_match_guard": "Dependency acquisition during cargo build is not a rustc compile diagnostic or an incompatible-version resolver diagnosis.",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 4,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "error: failed to get `jobserver` as a dependency of package `cc v1.4.0`"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 12,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "failed to load source for dependency `jobserver`"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 18,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "download of jo/bs/jobserver failed"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 21,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl failed"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 24,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "[16] Error in the HTTP2 framing layer"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 4,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "error: failed to get `jobserver` as a dependency of package `cc v1.4.0`"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 12,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "failed to load source for dependency `jobserver`"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 18,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "download of jo/bs/jobserver failed"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 21,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl failed"
+            },
+            {
+              "source": "ripgrep-registry-http2.log",
+              "line": 24,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "[16] Error in the HTTP2 framing layer"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ],
+          "expected_codes_from_preanalysis_evidence_review": [],
+          "false_positive_codes": [],
+          "missing_supported_codes": [],
+          "replay_expectation_matched": true
+        }
+      }
+    }
+  ],
+  "complete_log_results": [
+    {
+      "file": "BurntSushi-ripgrep-37085789735.log",
+      "sha256": "95addd6757f4c29c8e84d823353942599fe4c5040301aaa1f50ee89cb2c8f453",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 307,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 332,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "if [[ $attempt == 5 ]] || ! grep -Fq 'checksum failed for ' \"$log\" \\"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 516,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "error: failed to get `jobserver` as a dependency of package `cc v1.4.0`"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 524,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "failed to load source for dependency `jobserver`"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 530,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "download of jo/bs/jobserver failed"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 533,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl failed"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 536,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "[16] Error in the HTTP2 framing layer"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 307,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 332,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "if [[ $attempt == 5 ]] || ! grep -Fq 'checksum failed for ' \"$log\" \\"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 516,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "error: failed to get `jobserver` as a dependency of package `cc v1.4.0`"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 524,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "failed to load source for dependency `jobserver`"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 530,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "download of jo/bs/jobserver failed"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 533,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "curl failed"
+            },
+            {
+              "source": "BurntSushi-ripgrep-37085789735.log",
+              "line": 536,
+              "job": "test (pinned, ubuntu-latest, 1.96.0)",
+              "step": "UNKNOWN STEP",
+              "text": "[16] Error in the HTTP2 framing layer"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    },
+    {
+      "file": "psf-black-37773541121.log",
+      "sha256": "7ab4de77a1d71424ec28b636f9fe268a9c7f06a0b6c75f412fa5d267701a7972",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    },
+    {
+      "file": "psf-black-37824955673.log",
+      "sha256": "35ad9858753937e875b471b4318e0239f3436a01f0b4966c4712c26ba2475d27",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 126,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[start-action display=Run pre-commit run --show-diff-on-failure --color=always --all-files;id=__pre-commit_action.__run_3]"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 127,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 128,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 142,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "prettier.................................................................Failed"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 244,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[end-action id=__pre-commit_action.__run_3;outcome=failure;conclusion=failure;duration_ms=13790]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 126,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[start-action display=Run pre-commit run --show-diff-on-failure --color=always --all-files;id=__pre-commit_action.__run_3]"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 127,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 128,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "pre-commit run --show-diff-on-failure --color=always --all-files"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 142,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "prettier.................................................................Failed"
+            },
+            {
+              "source": "psf-black-37824955673.log",
+              "line": 244,
+              "job": "lint",
+              "step": "Run pre-commit hooks",
+              "text": "##[end-action id=__pre-commit_action.__run_3;outcome=failure;conclusion=failure;duration_ms=13790]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    },
+    {
+      "file": "pydantic-pydantic-37784817707.log",
+      "sha256": "adb7e94e51a5aaeadb5adff0db856b83529c35732c7fbe0b8d0be3e459cf70a2",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-pydantic-37784817707.log",
+              "line": 89,
+              "job": "Send tweet",
+              "step": "UNKNOWN STEP",
+              "text": "error: No `pyproject.toml` found in current directory or any parent directory"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-pydantic-37784817707.log",
+              "line": 89,
+              "job": "Send tweet",
+              "step": "UNKNOWN STEP",
+              "text": "error: No `pyproject.toml` found in current directory or any parent directory"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context",
+            "Exit status alone does not explain why the command failed"
+          ]
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    },
+    {
+      "file": "pydantic-pydantic-37818576440.log",
+      "sha256": "451f9336d7c5ddc3edeca72c07d1276450450121bc913ae6984844dd6d5ee318",
+      "editions": {
+        "free": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-pydantic-37818576440.log",
+              "line": 142,
+              "job": "upload-previews",
+              "step": "UNKNOWN STEP",
+              "text": "##[error]no matching workflow run found with any artifacts?"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context"
+          ]
+        },
+        "pro": {
+          "assessment": "insufficient",
+          "codes": [],
+          "findings": [],
+          "unclassified_errors": [
+            {
+              "source": "pydantic-pydantic-37818576440.log",
+              "line": 142,
+              "job": "upload-previews",
+              "step": "UNKNOWN STEP",
+              "text": "##[error]no matching workflow run found with any artifacts?"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": [
+            "Insufficient evidence: no supported error signature; obtain complete failed-step logs and command context"
+          ]
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    },
+    {
+      "file": "pytest-dev-pytest-37653997861.log",
+      "sha256": "a3821f19a010d273904c6392dcad8e2170b0528d63a5f6ece6309a9d4040826b",
+      "editions": {
+        "free": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.test"
+          ],
+          "findings": [
+            {
+              "code": "python.test",
+              "line": 853,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": [
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 426,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "digest-mismatch: error"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 900,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "= 1 failed, 4551 passed, 146 skipped, 13 xfailed, 1 xpassed, 2 warnings in 467.56s (0:07:47) ="
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 903,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "evaluation failed :( (481.77 seconds)"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 967,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "    \"result\": \"failure\","
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 976,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[start-action display=Decide whether the input jobs succeeded or failed;id=__re-actors_alls-green.outcome]"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 989,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "    \"result\": \"failure\","
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 995,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "# \u274c Some of the required to succeed jobs failed \ud83d\ude22\ud83d\ude22\ud83d\ude22"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 998,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "\u274c build \u2192 \ud83d\udd34 failure [required to succeed]"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 1000,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[end-action id=__re-actors_alls-green.outcome;outcome=failure;conclusion=failure;duration_ms=89]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": []
+        },
+        "pro": {
+          "assessment": "signature-supported",
+          "codes": [
+            "python.test"
+          ],
+          "findings": [
+            {
+              "code": "python.test",
+              "line": 853,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP"
+            }
+          ],
+          "unclassified_errors": [
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 426,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "digest-mismatch: error"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 900,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "= 1 failed, 4551 passed, 146 skipped, 13 xfailed, 1 xpassed, 2 warnings in 467.56s (0:07:47) ="
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 903,
+              "job": "build (windows-py311)",
+              "step": "UNKNOWN STEP",
+              "text": "evaluation failed :( (481.77 seconds)"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 967,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "    \"result\": \"failure\","
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 976,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[start-action display=Decide whether the input jobs succeeded or failed;id=__re-actors_alls-green.outcome]"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 989,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "    \"result\": \"failure\","
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 995,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "# \u274c Some of the required to succeed jobs failed \ud83d\ude22\ud83d\ude22\ud83d\ude22"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 998,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "\u274c build \u2192 \ud83d\udd34 failure [required to succeed]"
+            },
+            {
+              "source": "pytest-dev-pytest-37653997861.log",
+              "line": 1000,
+              "job": "check",
+              "step": "UNKNOWN STEP",
+              "text": "##[end-action id=__re-actors_alls-green.outcome;outcome=failure;conclusion=failure;duration_ms=89]"
+            }
+          ],
+          "verification": "not-run",
+          "missing_information": []
+        }
+      },
+      "interpretation": "Complete-job context check; no extra accuracy claim"
+    }
+  ],
+  "acquisition_exclusions": [
+    {
+      "repository": "cli/cli",
+      "run_id": 37594273405,
+      "reason": "Run metadata exposed no jobs; gh --log-failed returned log not found. Not analyzed or counted."
+    },
+    {
+      "repository": "cli/cli",
+      "run_id": 37594273017,
+      "reason": "Run metadata exposed no jobs; gh --log-failed returned log not found. Not analyzed or counted."
+    }
+  ],
+  "limitations": [
+    "Only seven deliberately selected excerpts from six newly reviewed public failed runs; cases are not independent random draws.",
+    "The aggregate-only unknown excerpt comes from a run whose separate failing job has a supported assertion; withholding that job limits that input by design, without asserting the full run is unknowable.",
+    "gh failed-job log output reports UNKNOWN STEP in five of six runs; named failed steps come from separate run metadata and were not inserted into fixture text.",
+    "No target checkout, repair, test execution, workflow rerun or successful-fix measurement.",
+    "Source freeze proves which diagnostic implementation was evaluated; matching replay expectations later is a regression check, not independent accuracy."
+  ]
+}

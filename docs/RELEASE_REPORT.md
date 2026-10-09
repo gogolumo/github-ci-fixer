@@ -77,7 +77,7 @@ are retained as evidence; final matrix must validate the revised source.
 
 - github-ci-fixer-free.zip: 14646 bytes; SHA-256 `149b16daa66888d5f260c7b8c28debebbb64246089e5f2654ed338f524ffe7da`. Structure and extracted trusted smoke passed; marketplace approval not requested.
 
-Both archives place SKILL.md at ZIP root, include all references/runtime/example files, have no
+Historical 1.0.0 archives placed SKILL.md at ZIP root (superseded for final 1.0.1 by a named skill folder), include all references/runtime/example files, have no
 runtime pip dependency, and are far below the conservative 50 MB task limit. Timestamp/order
 are fixed. Local validation is not Agensi security certification. Free release ZIP is local until
 review; Pro ZIP must not be attached to the public PR or workflow artifacts.

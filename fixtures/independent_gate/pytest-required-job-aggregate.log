@@ -1,0 +1,6 @@
+check	UNKNOWN STEP	2026-10-07T17:12:51.4201708Z # ❌ Some of the required to succeed jobs failed 😢😢😢
+check	UNKNOWN STEP	2026-10-07T17:12:51.4202488Z 
+check	UNKNOWN STEP	2026-10-07T17:12:51.4202749Z 🔮 Job statuses:
+check	UNKNOWN STEP	2026-10-07T17:12:51.4203416Z ❌ build → 🔴 failure [required to succeed]
+check	UNKNOWN STEP	2026-10-07T17:12:51.4263579Z ##[error]Process completed with exit code 1.
+check	UNKNOWN STEP	2026-10-07T17:12:51.4356711Z ##[end-action id=__re-actors_alls-green.outcome;outcome=failure;conclusion=failure;duration_ms=89]

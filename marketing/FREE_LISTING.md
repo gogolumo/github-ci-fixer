@@ -2,15 +2,15 @@
 
 **Product title:** GitHub CI Fixer Free — Evidence-based GitHub Actions troubleshooting
 **Price:** $0, subject to final creator-dashboard setup.
-**Short description:** Turn a saved failed CI log into focused evidence, a likely cause and specific verification guidance—offline.
+**Short description:** Turn a saved failed CI log into supported error evidence, a cautious hypothesis and specific verification guidance—offline.
 
 ## Full description
 
-Find the real reason your GitHub Actions failed. Fix it with confidence.
+Find supported error evidence in your GitHub Actions logs and decide what to check next.
 GitHub CI Fixer Free helps developers move from long CI logs to an evidence-based diagnosis.
 It reports what it observed, explains missing context and separates suggestions from actual
 verification. Free finishes the complete saved-log diagnostic workflow without an upgrade.
-Not every failure can be fixed automatically. No paid external API, always-running backend,
+The CLI produces analysis; it never edits code or runs tests. No paid external API, always-running backend,
 telemetry or license activation is required by the tooling. Agent reasoning uses your chosen host.
 
 ## Features
@@ -30,7 +30,8 @@ does not imply testing of every agent/toolchain. No GitHub authentication or net
 
 ## Installation
 
-Extract the ZIP into `github-ci-fixer`.
+Extract the ZIP into a parent directory; it creates `github-ci-fixer`.
+Enter that generated folder before running the commands below. Avoid double nesting.
 SKILL.md must be directly inside that directory. Keep all scripts/references/examples together.
 Use the host's documented Agent Skills installer or point the agent to SKILL.md. Direct CLI use
 needs no agent. On Windows use `python` when `python3` is unavailable. No runtime pip install.
@@ -46,7 +47,7 @@ Exit 0 on analysis means the report was produced; it does not mean CI passed.
 
 ## Limitations
 
-No networking, repository changes, automatic execution or JSON CLI. Unknown logs require more context. No Java-specific rules.
+No networking, repository changes, automatic execution or JSON CLI. Unsupported diagnostic forms remain unclassified; incomplete logs may need more context. No Java-specific rules.
 Signatures are evidence-supported hypotheses, not numerical certainty. Text may be incomplete;
 redaction cannot recognize every secret. Review reports before sharing. No automatic push,
 merge, deploy or security bypass. No successful repair or time-saving guarantee.
@@ -64,12 +65,12 @@ offline, markdown.
 **Does it upload logs?** Offline commands do not. Free has no network feature.
 **Can I use it without an agent?** Yes, run the bundled Python CLI.
 **Are suggestions verified automatically?** No. Free never executes tests.
-**Can I share it?** MIT allows redistribution with the license notice.
-**What is the refund/update policy?** Marketplace terms govern purchases; no independent support SLA or promise of future updates is made.
+**Can I share it?** The public GitHub edition is MIT with its notice. Agensi downloads have separate marketplace terms; confirm those before redistributing a marketplace download.
+**What is the refund/update policy?** [Current marketplace terms](https://www.agensi.io/terms) govern refunds and published-update access. We promise no independent SLA or obligation to create updates.
 
 ## Changelog
 
-1.0.1 (2026-10-08): evidence-backed formatting/filesystem signatures, historical-run validation and portable package hardening.
+1.0.1 (2026-10-08): evidence-backed formatting/filesystem signatures, historical-run validation, new-case coverage reporting and validated single-folder release archives.
 
 1.0.0 (2026-10-08): initial release candidate with tested diagnostic fixtures and reproducible packages.
 Offline Markdown diagnostic workflow.

@@ -34,3 +34,5 @@ jobs:
       - run: python tools/audit_public.py
       - run: python tools/build_release.py metadata free/github-ci-fixer/SKILL.md
       - run: python tools/real_world_benchmark.py
+      - run: python tools/independent_evaluation.py --summary
+      - run: python tools/buyer_installation.py --package-root free/github-ci-fixer

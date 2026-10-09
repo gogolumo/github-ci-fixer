@@ -1,0 +1,23 @@
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3557633Z         # The teardown duration of test_a1 (300ms) should not leak into test_a2.
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3560365Z         duration_str = a2_lines[0].split()[-1]
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3562421Z         if duration_str.endswith("us"):
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3565146Z             dur_seconds = float(duration_str[:-2]) / 1_000_000
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3567491Z         elif duration_str.endswith("ms"):
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3569984Z             dur_seconds = float(duration_str[:-2]) / 1_000
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3572218Z         elif duration_str.endswith("s"):
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3574216Z             dur_seconds = float(duration_str[:-1])
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3575602Z         else:
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3576692Z             dur_seconds = 0.0
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3578068Z >       assert dur_seconds < 0.1
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3579411Z E       assert 0.19469999999999998 < 0.1
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3580005Z 
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3580746Z D:\a\pytest\pytest\testing\test_terminal.py:252: AssertionError
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3633453Z -------------- generated xml file: D:\a\pytest\pytest\junit.xml ---------------
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3635053Z =========================== short test summary info ===========================
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3638766Z FAILED testing/test_terminal.py::TestTerminal::test_console_output_style_times_slow_teardown_does_not_leak - assert 0.19469999999999998 < 0.1
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3641845Z XPASS testing/_py/test_local.py::TestLocalPath::test_make_numbered_dir_multiprocess_safe - #11603
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:31.3644797Z = 1 failed, 4551 passed, 146 skipped, 13 xfailed, 1 xpassed, 2 warnings in 467.56s (0:07:47) =
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:32.1098768Z py311: exit 1 (469.55 seconds) D:\a\pytest\pytest> pytest --junitxml=junit.xml pid=3200
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:32.1152088Z   py311: FAIL code 1 (481.64=setup[12.09]+cmd[469.55] seconds)
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:32.1152718Z   evaluation failed :( (481.77 seconds)
+build (windows-py311)	UNKNOWN STEP	2026-10-07T17:12:32.1810907Z ##[error]Process completed with exit code 1.

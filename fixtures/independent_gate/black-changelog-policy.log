@@ -1,0 +1,6 @@
+check	UNKNOWN STEP	2026-10-08T11:57:49.5222285Z ##[group]Run grep -P '\((#\d+,\s+)*#5498(,\s+#\d+)*\)$' CHANGES.md || \
+check	UNKNOWN STEP	2026-10-08T11:57:49.5224579Z grep -P '\((#\d+,\s+)*#5498(,\s+#\d+)*\)$' CHANGES.md || \
+check	UNKNOWN STEP	2026-10-08T11:57:49.5227498Z (echo "Please add '(#5498)' change line to CHANGES.md (or if appropriate, ask a maintainer to add the 'ci: skip news' label)" && \
+check	UNKNOWN STEP	2026-10-08T11:57:49.5230128Z exit 1)
+check	UNKNOWN STEP	2026-10-08T11:57:49.5625497Z Please add '(#5498)' change line to CHANGES.md (or if appropriate, ask a maintainer to add the 'ci: skip news' label)
+check	UNKNOWN STEP	2026-10-08T11:57:49.5647684Z ##[error]Process completed with exit code 1.

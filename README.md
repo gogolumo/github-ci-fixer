@@ -1,11 +1,11 @@
 # GitHub CI Fixer Free
 
-**Find the real reason your GitHub Actions failed. Fix it with confidence.**
+**Find supported error evidence and practical verification steps in saved CI logs.**
 
 An offline diagnostic tool and Agent Skill by **Bohdan Dron**. Analyze a saved GitHub Actions
 text log, get a focused evidence-based hypothesis, and follow a specific verification procedure.
 Free is useful on its own. No GitHub account, paid API, backend or runtime pip dependency.
-Not every CI failure can be diagnosed or fixed automatically.
+It analyzes supported signatures and recommends checks; it never edits code or runs tests.
 
 ## What it does
 
@@ -18,14 +18,22 @@ Not every CI failure can be diagnosed or fixed automatically.
 
 ## Install and use
 
-Requires Python 3.11+. Clone/download this public repository, or extract the Free ZIP into a
-folder named `github-ci-fixer`. Keep SKILL.md, scripts, references and examples together.
+Requires Python 3.11+. Clone/download this public repository, or extract the Free ZIP into a parent directory.
+The archive creates `github-ci-fixer` with SKILL.md inside; avoid an additional wrapper folder.
+Keep SKILL.md, scripts, references and examples together.
 On Windows, use `python` if `python3` is unavailable.
 
 ```text
 git clone https://github.com/gogolumo/github-ci-fixer.git
 cd github-ci-fixer
 python3 free/github-ci-fixer/scripts/ci_fixer.py fixtures/python_missing.log
+```
+
+From the extracted release's parent directory, the equivalent buyer command is:
+
+```text
+cd github-ci-fixer
+python3 scripts/ci_fixer.py examples/python-missing.log
 ```
 
 For agents, point your host at [SKILL.md](free/github-ci-fixer/SKILL.md), or install that complete
@@ -85,8 +93,12 @@ python3 tools/build_release.py build free/github-ci-fixer release/github-ci-fixe
 Activate the virtual environment before the pip/check commands: `source .venv/bin/activate`
 on macOS/Linux, or `.venv\Scripts\Activate.ps1` in Windows PowerShell. See
 [contributing](CONTRIBUTING.md) for lint/type/format and audit commands. ZIP builder produces a
-SHA-256 sidecar and validates root layout, links, unsafe paths, secret signatures, sizes and an
+SHA-256 sidecar and validates the single skill folder, links, unsafe paths, secret signatures, sizes and an
 extracted trusted-package smoke. This is submission preparation, not Agensi approval.
+
+See the [marketplace packaging report](docs/MARKETPLACE_PACKAGING_GATE.md),
+[new-case diagnostic evaluation](docs/INDEPENDENT_EVALUATION_1.0.1.md), and
+[final release report](docs/FINAL_RELEASE_REPORT_1.0.1.md) for evidence and external gates.
 
 MIT licensed. Copyright 2026 Bohdan Dron. Support: public non-sensitive issues or the
 [author profile](https://github.com/gogolumo); no response-time SLA. See [changelog](CHANGELOG.md).
