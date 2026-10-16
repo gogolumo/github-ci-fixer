@@ -7,6 +7,8 @@ text log, get a focused evidence-based hypothesis, and follow a specific verific
 Free is useful on its own. No GitHub account, paid API, backend or runtime pip dependency.
 It analyzes supported signatures and recommends checks; it never edits code or runs tests.
 
+> **Commercial inquiries:** Need CI diagnostics adapted to your stack? [Discuss custom implementation](COMMERCIAL.md). Free remains MIT-licensed; Pro purchase availability is not implied.
+
 ## What it does
 
 - Recognizes tested Python/pytest, npm/JS/TypeScript, Rust, dependency, environment, path,
